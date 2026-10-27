@@ -4,8 +4,6 @@ import Hero from './components/Hero';
 import Features from './components/Features';
 import Tokenomics from './components/Tokenomics';
 import Roadmap from './components/Roadmap';
-import Team from './components/Team';
-import CTA from './components/CTA';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -28,8 +26,6 @@ export default function App() {
         <Features lang={lang} />
         <Tokenomics lang={lang} />
         <Roadmap lang={lang} />
-        <Team lang={lang} />
-        <CTA lang={lang} />
       </main>
       <Footer lang={lang} />
     </div>

@@ -35,7 +35,7 @@ export default function Footer({ lang }: Props) {
           <div>
             <h4 className="font-semibold text-white text-sm uppercase tracking-wider mb-4">{lang === 'en' ? 'Links' : 'Liens'}</h4>
             <ul className="space-y-3 text-sm">
-              {['#hero', '#features', '#tokenomics', '#roadmap', '#team'].map(href => (
+              {['#hero', '#features', '#tokenomics', '#roadmap'].map(href => (
                 <li key={href}><a href={href} className="hover:text-white transition-colors">{lang === 'en' ? href.replace('#', '').charAt(0).toUpperCase() + href.replace('#', '').slice(1) : href.replace('#', '')}</a></li>
               ))}
             </ul>

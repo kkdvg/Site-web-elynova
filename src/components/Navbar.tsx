@@ -14,14 +14,12 @@ const nav = {
     { href: '#features', label: 'Features' },
     { href: '#tokenomics', label: 'Tokenomics' },
     { href: '#roadmap', label: 'Roadmap' },
-    { href: '#team', label: 'Team' },
   ],
   fr: [
     { href: '#hero', label: 'Accueil' },
     { href: '#features', label: 'Fonctionnalités' },
     { href: '#tokenomics', label: 'Tokenomics' },
     { href: '#roadmap', label: 'Feuille de Route' },
-    { href: '#team', label: 'Équipe' },
   ],
 };
 
@@ -67,7 +65,7 @@ export default function Navbar({ scrolled, lang, toggleLang }: Props) {
             <span className="hidden sm:inline">{lang === 'en' ? 'FR' : 'EN'}</span>
           </button>
 
-          <a href="#cta" onClick={(e) => handleClick(e, '#cta')}
+          <a href="#hero" onClick={(e) => handleClick(e, '#hero')}
             className="flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white text-sm font-semibold rounded-xl hover:bg-blue-700 transition-all hover:shadow-lg active:scale-95">
             <Download className="w-4 h-4" />
             <span className="hidden sm:inline">{lang === 'en' ? 'Download' : 'Télécharger'}</span>
