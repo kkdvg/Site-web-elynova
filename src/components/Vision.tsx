@@ -1,10 +1,6 @@
 import { motion } from 'framer-motion';
 import { Brain, Sparkles, Rocket } from 'lucide-react';
 
-interface VisionProps {
-  lang: 'en' | 'fr';
-}
-
 const visionData = {
   en: {
     title: 'Our Vision',
@@ -20,29 +16,29 @@ const visionData = {
 
 const iconMap = [Brain, Sparkles, Rocket];
 
-export default function Vision({ lang }: VisionProps) {
+export default function Vision({ lang }: { lang: 'en' | 'fr' }) {
   const data = visionData[lang];
 
   return (
-    <section id="vision" className="py-24 md:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent" />
-
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+    <section id="vision" className="py-24 bg-white">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight mb-8">
-              <span className="text-gradient">{data.title}</span>
+            <span className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-4 block">
+              {lang === 'en' ? 'What Drives Us' : 'Ce qui nous anime'}
+            </span>
+            <h2 className="font-bold text-4xl md:text-5xl lg:text-6xl text-slate-900 mb-8">
+              {data.title}
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-12 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 leading-relaxed mb-12 max-w-2xl mx-auto">
               {data.desc}
             </p>
           </motion.div>
 
-          {/* Keyword badges */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -57,16 +53,15 @@ export default function Vision({ lang }: VisionProps) {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 + i * 0.08 }}
-                whileHover={{ scale: 1.05, borderColor: 'rgba(6,182,212,0.4)' }}
-                className="px-5 py-2.5 rounded-full border border-white/10 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all cursor-default"
+                whileHover={{ scale: 1.05 }}
+                className="px-5 py-2.5 rounded-full border border-blue-200 text-sm font-medium text-blue-700 hover:bg-blue-50 transition-all cursor-default"
               >
                 {kw}
               </motion.span>
             ))}
           </motion.div>
 
-          {/* Vision icons */}
-          <div className="flex justify-center gap-8 mt-16">
+          <div className="flex justify-center gap-12 mt-16">
             {[Brain, Sparkles, Rocket].map((Icon, i) => (
               <motion.div
                 key={i}
@@ -76,10 +71,10 @@ export default function Vision({ lang }: VisionProps) {
                 transition={{ delay: 0.5 + i * 0.15 }}
                 className="flex flex-col items-center gap-3"
               >
-                <div className="w-16 h-16 rounded-2xl bg-secondary/50 border border-white/10 flex items-center justify-center group-hover:border-primary/30 transition-colors">
-                  <Icon className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center hover:bg-blue-100 transition-colors">
+                  <Icon className="w-8 h-8 text-blue-600" />
                 </div>
-                <span className="text-xs text-muted-foreground font-medium">
+                <span className="text-xs font-medium text-slate-500">
                   {data.keywords[i * 2] || data.keywords[i]}
                 </span>
               </motion.div>

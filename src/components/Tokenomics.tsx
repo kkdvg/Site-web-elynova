@@ -1,9 +1,5 @@
 import { motion } from 'framer-motion';
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
-
-interface TokenomicsProps {
-  lang: 'en' | 'fr';
-}
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
 const tokenData = {
   en: {
@@ -13,11 +9,11 @@ const tokenData = {
     validation: 'Validation',
     validationDesc: 'Each segment of the circle corresponds exactly to the allocated percentage for complete transparency.',
     segments: [
-      { name: 'Community Rewards', value: 40, color: '#06b6d4' },
-      { name: 'Development', value: 25, color: '#8b5cf6' },
-      { name: 'Liquidity', value: 15, color: '#34d399' },
-      { name: 'Team & Advisors', value: 10, color: '#f59e0b' },
-      { name: 'Marketing', value: 10, color: '#ef4444' },
+      { name: 'Community Rewards', value: 40, color: '#2563eb' },
+      { name: 'Development', value: 25, color: '#7c3aed' },
+      { name: 'Liquidity', value: 15, color: '#059669' },
+      { name: 'Team & Advisors', value: 10, color: '#d97706' },
+      { name: 'Marketing', value: 10, color: '#dc2626' },
     ],
   },
   fr: {
@@ -27,37 +23,37 @@ const tokenData = {
     validation: 'Validation',
     validationDesc: 'Chaque part du cercle correspond exactement au pourcentage alloué pour assurer une transparence totale.',
     segments: [
-      { name: 'Récompenses Communauté', value: 40, color: '#06b6d4' },
-      { name: 'Développement', value: 25, color: '#8b5cf6' },
-      { name: 'Liquidité', value: 15, color: '#34d399' },
-      { name: 'Équipe & Conseillers', value: 10, color: '#f59e0b' },
-      { name: 'Marketing', value: 10, color: '#ef4444' },
+      { name: 'Récompenses Communauté', value: 40, color: '#2563eb' },
+      { name: 'Développement', value: 25, color: '#7c3aed' },
+      { name: 'Liquidité', value: 15, color: '#059669' },
+      { name: 'Équipe & Conseillers', value: 10, color: '#d97706' },
+      { name: 'Marketing', value: 10, color: '#dc2626' },
     ],
   },
 };
 
-export default function Tokenomics({ lang }: TokenomicsProps) {
+export default function Tokenomics({ lang }: { lang: 'en' | 'fr' }) {
   const data = tokenData[lang];
 
   return (
-    <section id="tokenomics" className="py-24 md:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
-
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+    <section id="tokenomics" className="py-24 bg-slate-50">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <h2 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6">
-            <span className="text-gradient">{data.title}</span>
+          <span className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-4 block">
+            {lang === 'en' ? 'Distribution' : 'Répartition'}
+          </span>
+          <h2 className="font-bold text-4xl md:text-5xl lg:text-6xl text-slate-900 mb-6">
+            {data.title}
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">{data.subtitle}</p>
+          <p className="text-lg text-slate-600 leading-relaxed">{data.subtitle}</p>
         </motion.div>
 
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24 max-w-6xl mx-auto">
-          {/* Chart */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -65,7 +61,6 @@ export default function Tokenomics({ lang }: TokenomicsProps) {
             transition={{ duration: 0.6 }}
             className="w-full lg:w-1/2 aspect-square max-w-md mx-auto lg:mx-0"
           >
-            <div className="absolute inset-0 bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
@@ -86,50 +81,47 @@ export default function Tokenomics({ lang }: TokenomicsProps) {
                 </Pie>
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: 'rgba(15, 23, 42, 0.95)',
-                    border: '1px solid rgba(255,255,255,0.1)',
+                    backgroundColor: 'white',
+                    border: '1px solid #e2e8f0',
                     borderRadius: '12px',
-                    backdropFilter: 'blur(12px)',
+                    boxShadow: '0 10px 40px -10px rgba(0,0,0,0.1)',
                   }}
-                  labelStyle={{ color: '#94a3b8' }}
-                  itemStyle={{ color: '#f8fafc' }}
+                  labelStyle={{ color: '#64748b' }}
+                  itemStyle={{ color: '#0f172a' }}
                   formatter={(value: number, name: string) => [`${value}%`, name]}
                 />
               </PieChart>
             </ResponsiveContainer>
           </motion.div>
 
-          {/* Legend & info */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full lg:w-1/2 space-y-6"
+            className="w-full lg:w-1/2 space-y-4"
           >
-            <div className="grid gap-4">
-              {data.segments.map((seg, i) => (
-                <motion.div
-                  key={seg.name}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 + i * 0.1 }}
-                  whileHover={{ x: 8 }}
-                  className="flex items-center justify-between p-5 rounded-2xl bg-secondary/20 border border-white/5 hover:border-white/10 transition-all group"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-4 h-4 rounded-full shadow-lg" style={{ backgroundColor: seg.color, boxShadow: `0 0 12px ${seg.color}` }} />
-                    <span className="font-medium text-foreground/90">{seg.name}</span>
-                  </div>
-                  <span className="font-display font-bold text-xl text-gradient">{seg.value}%</span>
-                </motion.div>
-              ))}
-            </div>
+            {data.segments.map((seg, i) => (
+              <motion.div
+                key={seg.name}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 + i * 0.1 }}
+                whileHover={{ x: 8 }}
+                className="flex items-center justify-between p-4 rounded-xl bg-white border border-slate-100 hover:border-blue-100 transition-all card-shadow"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-4 h-4 rounded-full shadow-sm" style={{ backgroundColor: seg.color }} />
+                  <span className="font-medium text-slate-700">{seg.name}</span>
+                </div>
+                <span className="font-bold text-xl" style={{ color: seg.color }}>{seg.value}%</span>
+              </motion.div>
+            ))}
 
-            <div className="pt-4 border-t border-white/5">
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">{data.validation}:</strong> {data.validationDesc}
+            <div className="pt-6 border-t border-slate-200 mt-6">
+              <p className="text-sm text-slate-600 leading-relaxed">
+                <strong className="text-slate-900">{data.validation}:</strong> {data.validationDesc}
               </p>
             </div>
           </motion.div>
