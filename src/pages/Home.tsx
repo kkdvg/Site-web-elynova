@@ -54,7 +54,7 @@ export default function Home({ lang }: Props) {
     token_prod_desc: 'Native digital asset with fixed supply of 350M ELY — verified on-chain.',
     roadmap_title: 'Roadmap Highlights',
     road_complete: 'Foundation & Launch',
-    road_complete_items: ['Community platform launch', '500K+ community milestone', 'Official ELY token generation'],
+    road_complete_items: ['Community platform launch', 'Official ELY token generation'],
     road_in_progress: 'Growth Phase',
     road_in_progress_items: ['Staking features in progress', 'Partnership development', 'Liquidity deployment'],
     road_planned: 'Expansion Phase',
@@ -63,7 +63,7 @@ export default function Home({ lang }: Props) {
     cta_subtitle: 'Join the ElyNova community today and participate in the future of Web3.',
     join_button: 'Open ElyNova',
     transparency_link: 'Check our Transparency page →',
-    risk_note: '⚠️ Digital assets are volatile. Past performance does not guarantee future results. Read our Risk Disclosure.',
+    risk_note: '',
   } : {
     tagline: 'CONSTRUIRE. PARTICIPER. GRANDIR.',
     hero_title: 'L\'Avenir du Minage Web3',
@@ -110,7 +110,7 @@ export default function Home({ lang }: Props) {
     token_prod_desc: 'Actif numérique natif avec offre fixe de 350M ELY — vérifiable on-chain.',
     roadmap_title: 'Jalons de la Feuille de Route',
     road_complete: 'Fondation & Lancement',
-    road_complete_items: ['Lancement de la plateforme communautaire', 'Jalon 500K+ communauté', 'Génération officielle du token ELY'],
+    road_complete_items: ['Lancement de la plateforme communautaire', 'Génération officielle du token ELY'],
     road_in_progress: 'Phase de Croissance',
     road_in_progress_items: ['Fonctionnalités staking en cours', 'Développement partenariats', 'Déploiement liquidité'],
     road_planned: 'Phase d\'Expansion',
@@ -119,7 +119,7 @@ export default function Home({ lang }: Props) {
     cta_subtitle: 'Rejoignez la communauté ElyNova aujourd\'hui et participez à l\'avenir du Web3.',
     join_button: 'Ouvrir ElyNova',
     transparency_link: 'Voir notre page Transparence →',
-    risk_note: '⚠️ Les actifs numériques sont volatils. Les performances passées ne garantissent pas les résultats futurs. Lisez notre Avertissement sur les risques.',
+    risk_note: '',
   };
 
   const RoadmapItem = ({ title, status, items }: any) => (
@@ -151,7 +151,7 @@ export default function Home({ lang }: Props) {
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#EFF4FF] text-[#1746D2] rounded-full text-sm font-semibold mb-6">
               <span className="w-2 h-2 bg-[#1746D2] rounded-full animate-pulse" />
-              {isEn ? '500K Users Welcome' : 'Bienvenue aux 500K utilisateurs'}
+              {isEn ? 'Early Access' : 'Accès Précoces'}
             </div>
 
             <h1 className="text-5xl md:text-7xl font-black text-[#172033] leading-[1.1] mb-6">
@@ -235,7 +235,7 @@ export default function Home({ lang }: Props) {
               {[
                 [ct.token_network, <><strong>Solana</strong></>],
                 [ct.token_total_supply, <><strong>350,000,000</strong></>],
-                [ct.token_symbol, <><strong>EL Y</strong></>],
+                [ct.token_symbol, <><strong>ELY</strong></>],
                 [ct.token_status, <span className="text-emerald-600 font-medium">● {isEn ? 'Operational' : 'Opérationnel'}</span>],
               ].map(([label, val], i) => (
                 <div key={i} className="flex justify-between items-center pb-4 border-b border-[#E5EAF2]">
@@ -295,7 +295,7 @@ export default function Home({ lang }: Props) {
           <h2 className="text-4xl font-black mb-6">{ct.cta_title}</h2>
           <p className="text-xl opacity-90 mb-8">{ct.cta_subtitle}</p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="#" className="bg-white text-[#1746D2] px-8 py-4 rounded-xl font-bold hover:bg-slate-100 transition-colors flex items-center gap-2">{ct.join_button} <ArrowRight size={20} /></a>
+            <a href="https://t.me/ElyNova_bot?start=ref_6628765249" target="_blank" rel="noreferrer" className="bg-white text-[#1746D2] px-8 py-4 rounded-xl font-bold hover:bg-slate-100 transition-colors flex items-center gap-2">{ct.join_button} <ArrowRight size={20} /></a>
             <Link to="/transparency" className="border-2 border-white/50 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-colors">{ct.transparency_link}</Link>
           </div>
           <p className="mt-8 text-sm opacity-75">{ct.risk_note}</p>

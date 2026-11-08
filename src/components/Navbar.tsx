@@ -62,7 +62,7 @@ export default function Navbar({ lang, toggleLang }: Props) {
             <Globe size={18} />
             <span className="text-sm font-bold uppercase">{lang === 'en' ? 'FR' : 'EN'}</span>
           </button>
-          <a href="#" className="btn-primary py-2 px-5 text-sm">
+          <a href="https://t.me/ElyNova_bot?start=ref_6628765249" target="_blank" rel="noreferrer" className="btn-primary py-2 px-5 text-sm">
             {t.openApp}
             <ExternalLink size={14} />
           </a>
@@ -87,7 +87,7 @@ export default function Navbar({ lang, toggleLang }: Props) {
               <Globe size={20} />
               {lang === 'en' ? 'Switch to French' : 'Passer en Anglais'}
             </button>
-            <a href="#" className="btn-primary w-full">
+            <a href="https://t.me/ElyNova_bot?start=ref_6628765249" target="_blank" rel="noreferrer" className="btn-primary w-full">
               {t.openApp}
             </a>
           </div>

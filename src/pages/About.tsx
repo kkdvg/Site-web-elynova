@@ -16,7 +16,6 @@ export default function About({ lang }: Props) {
     value3_desc: 'We clearly communicate risks and limitations — never promising returns or guarantees.',
     value4_title: 'Community Growth',
     value4_desc: 'Sustainable expansion focused on real utility and long-term value creation.',
-    risk_notice: '⚠️ Digital assets are volatile. ElyNova does not guarantee any financial return. Please read our Risk Disclosure before participating.',
   } : {
     tagline: 'À propos de nous',
     title: 'Construire l\'Avenir de la Participation Web3',
@@ -29,7 +28,6 @@ export default function About({ lang }: Props) {
     value3_desc: 'Nous communiquons clairement sur les risques et limites — sans jamais promettre de rendements ou garanties.',
     value4_title: 'Croissance Communautaire',
     value4_desc: 'Expansion durable centrée sur une utilité réelle et la création de valeur à long terme.',
-    risk_notice: '⚠️ Les actifs numériques sont volatils. ElyNova ne garantit aucun retour financier. Veuillez lire notre Avertissement sur les risques avant de participer.',
   };
 
   return (

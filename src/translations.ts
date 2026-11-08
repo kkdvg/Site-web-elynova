@@ -17,7 +17,7 @@ export const translations = {
       openApp: 'Open ElyNova'
     },
     hero: {
-      tag: '500K Users Welcome',
+      tag: 'Early Access',
       title: 'BUILD. PARTICIPATE. GROW.',
       subtitle: 'The official institutional portal of the ElyNova ecosystem on Solana.',
       cta1: 'Explore the Ecosystem',
@@ -58,7 +58,7 @@ export const translations = {
       openApp: 'Ouvrir ElyNova'
     },
     hero: {
-      tag: 'Bienvenue aux 500K utilisateurs',
+      tag: 'Accès Précoces',
       title: 'BUILD. PARTICIPATE. GROW.',
       subtitle: 'Le portail institutionnel officiel de l’écosystème ElyNova sur Solana.',
       cta1: 'Explorer l’écosystème',

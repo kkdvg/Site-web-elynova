@@ -48,7 +48,6 @@ export default function Footer({ lang }: Props) {
           <ul className="space-y-3 text-sm text-slate-300">
             <li><Link to="/privacy" className="hover:text-white transition-colors">{lang === 'en' ? 'Privacy Policy' : 'Confidentialité'}</Link></li>
             <li><Link to="/terms" className="hover:text-white transition-colors">{lang === 'en' ? 'Terms of Service' : 'Conditions'}</Link></li>
-            <li><Link to="/risk" className="hover:text-white transition-colors">{lang === 'en' ? 'Risk Disclosure' : 'Risques'}</Link></li>
             <li><a href="mailto:jokalou51@gmail.com" className="hover:text-white transition-colors">jokalou51@gmail.com</a></li>
           </ul>
         </div>

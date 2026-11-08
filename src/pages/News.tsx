@@ -4,14 +4,12 @@ interface Props { lang: 'en' | 'fr'; }
 
 const NEWS_EN = [
   { date: '2026-11-08', category: 'Announcement', title: 'ElyNova Official Website Launched', excerpt: 'We are proud to announce the launch of our official website, providing comprehensive information about the ElyNova ecosystem, tokenomics, and roadmap.' },
-  { date: '2026-10-15', category: 'Milestone', title: 'Community Reaches 500K Users', excerpt: 'The ElyNova community has crossed 500,000 registered users worldwide.' },
-  { date: '2026-09-01', category: 'Development', title: 'Mining App Beta Released', excerpt: 'The first beta version of the ElyNova mining application is now available for testing by early community members.' },
+  { date: '2026-09-01', category: 'Development', title: 'Mining Platform Development', excerpt: 'Work continues on the ElyNova mining application with improved features and community feedback integration.' },
 ];
 
 const NEWS_FR = [
   { date: '2026-11-08', category: 'Annonce', title: 'Lancement du Site Web Officiel ElyNova', excerpt: 'Nous sommes fiers d\'annoncer le lancement de notre site web officiel, offrant des informations complètes sur l\'écosystème ElyNova, la tokenomics et la feuille de route.' },
-  { date: '2026-10-15', category: 'Jalon', title: 'La Communauté Atteint 500K Utilisateurs', excerpt: 'La communauté ElyNova a dépassé les 500 000 utilisateurs inscrits dans le monde entier.' },
-  { date: '2026-09-01', category: 'Développement', title: 'App de Minage Bêta Disponibe', excerpt: 'La première version bêta de l\'application de minage ElyNova est maintenant disponible pour test par les membres précoces de la communauté.' },
+  { date: '2026-09-01', category: 'Développement', title: 'Développement de la Plateforme de Minage', excerpt: 'Les travaux se poursuivent sur l\'application de minage ElyNova avec des fonctionnalités améliorées et l\'intégration des retours communautaires.' },
 ];
 
 export default function NewsPage({ lang }: Props) {

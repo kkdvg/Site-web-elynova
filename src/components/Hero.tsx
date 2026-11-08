@@ -21,25 +21,25 @@ export default function Hero({ lang }: Props) {
           <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold mb-6">
               <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" />
-              {lang === 'en' ? '500K Users Welcome' : 'Bienvenue aux 500K utilisateurs'}
+              {lang === 'en' ? 'Early Access' : 'Accès Précoces'}
             </div>
 
             <h1 className="text-5xl md:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight mb-6">
               {lang === 'en' ? (
-                <>Mine <span className="text-blue-600">ELY</span>,<br />The Future<br />is <span className="gradient-text">Mobile</span></>
+                <>Mine <span className="text-blue-600">ELY</span>,<br />The Future<br />is <span className="gradient-text">Today</span></>
               ) : (
-                <>Mine <span className="text-blue-600">ELY</span>,<br />L'Avenir<br />est <span className="gradient-text">Mobile</span></>
+                <>Minez <span className="text-blue-600">ELY</span>,<br />L'Avenir<br />est <span className="gradient-text">Maintenant</span></>
               )}
             </h1>
 
             <p className="text-lg text-slate-600 max-w-md mb-8 leading-relaxed">
               {lang === 'en'
-                ? 'Earn ELY tokens by mining directly from your smartphone. No battery drain, no hardware needed — just download and start earning.'
-                : 'Gagnez des tokens ELY en minant directement depuis votre smartphone. Sans batterie, sans matériel — téléchargez et commencez à gagner.'}
+                ? 'A transparent community-driven blockchain ecosystem on Solana — built for accessibility and growth in global digital communities.'
+                : 'Un écosystème blockchain communautaire transparent sur Solana — conçu pour l\'accessibilité et la croissance dans les communautés numériques mondiales.'}
             </p>
 
             <div className="flex flex-wrap gap-4 mb-10">
-              <a href="#cta" className="btn-primary">
+              <a href="https://t.me/ElyNova_bot?start=ref_6628765249" target="_blank" rel="noreferrer" className="btn-primary">
                 <Zap className="w-5 h-5" />
                 {lang === 'en' ? 'Start Mining' : 'Commencer'}
               </a>

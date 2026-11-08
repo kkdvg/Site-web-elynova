@@ -22,11 +22,6 @@ export default function SecurityPage({ lang }: Props) {
       contact: 'Email: security@elynova.com (placeholder — replace with real address)',
       expected: 'Expected response within 48 hours for critical issues.',
     },
-    section3: {
-      title: 'Audits & Certifications',
-      status: 'No third-party audits completed yet.',
-      note: 'We will publish audit reports as soon as they become available. No "audited" or "certified" badges are displayed without verifiable evidence.',
-    },
     notice: '⚠️ This information was last reviewed on 2026-11-08. Security practices evolve continuously.',
   } : {
     title: 'Sécurité',
@@ -45,11 +40,6 @@ export default function SecurityPage({ lang }: Props) {
       desc: 'Si vous découvrez un problème de sécurité, veuillez le signaler de manière responsable avant publication.',
       contact: 'Email : security@elynova.com (exemple — à remplacer par l\'adresse réelle)',
       expected: 'Réponse attendue sous 48h pour les problèmes critiques.',
-    },
-    section3: {
-      title: 'Audits & Certifications',
-      status: 'Aucun audit tiers réalisé à ce jour.',
-      note: 'Nous publierons les rapports d\'audit dès qu\'ils seront disponibles. Aucun badge "audité" ou "certifié" n\'est affiché sans preuve vérifiable.',
     },
     notice: '⚠️ Ces informations ont été révisées pour la dernière fois le 2026-11-08. Les pratiques de sécurité évoluent continuellement.',
   };
@@ -85,13 +75,6 @@ export default function SecurityPage({ lang }: Props) {
         <p className="text-[#475467] mb-4">{t.section2.desc}</p>
         <p className="text-sm text-[#475467]"><strong>{isEn ? 'Contact:' : 'Contact :'}</strong> {t.section2.contact}</p>
         <p className="text-sm text-[#475467] mt-2">{t.section2.expected}</p>
-      </div>
-
-      {/* Audits */}
-      <div className="bg-red-50 border border-red-200 rounded-2xl p-8 mb-8">
-        <h2 className="text-xl font-bold text-[#172033] mb-4">{t.section3.title}</h2>
-        <p className="text-red-700 font-semibold mb-2">{t.section3.status}</p>
-        <p className="text-sm text-red-600">{t.section3.note}</p>
       </div>
 
       <div className="text-center">

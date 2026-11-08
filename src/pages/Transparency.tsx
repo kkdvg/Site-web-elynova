@@ -15,7 +15,7 @@ export default function TransparencyPage({ lang }: Props) {
         title: 'Token Information',
         items: [
           { label: 'Network', value: 'Solana', verified: true },
-          { label: 'Token Symbol', value: 'EL Y', verified: true },
+          { label: 'Token Symbol', value: 'ELY', verified: true },
           { label: 'Total Supply', value: '350,000,000 ELY', verified: true },
           { label: 'Mint Address', value: 'TBD (pending owner confirmation)', verified: false },
           { label: 'Creation Date', value: 'TBD (pending announcement)', verified: false },
@@ -40,7 +40,6 @@ export default function TransparencyPage({ lang }: Props) {
       },
     ],
     links: { solscan: 'https://solscan.io/', explorer_hint: 'Use Solscan to verify the mint address and wallet activity.' },
-    risk_notice: '⚠️ Some data is still being finalized. This page is updated progressively as information becomes available. Always verify directly on-chain.',
   } : {
     title: 'Transparence',
     subtitle: 'Vérifiez tout vous-même. Toutes les données blockchain sont publiquement accessibles.',
@@ -51,7 +50,7 @@ export default function TransparencyPage({ lang }: Props) {
         title: 'Informations du Token',
         items: [
           { label: 'Réseau', value: 'Solana', verified: true },
-          { label: 'Symbole', value: 'EL Y', verified: true },
+          { label: 'Symbole', value: 'ELY', verified: true },
           { label: 'Offre Totale', value: '350 000 000 ELY', verified: true },
           { label: 'Adresse Mint', value: 'À confirmer (attente validation propriétaire)', verified: false },
           { label: 'Date de Création', value: 'À confirmer (annonce future)', verified: false },
@@ -76,7 +75,6 @@ export default function TransparencyPage({ lang }: Props) {
       },
     ],
     links: { solscan: 'https://solscan.io/', explorer_hint: 'Utilisez Solscan pour vérifier l\'adresse mint et l\'activité des portefeuilles.' },
-    risk_notice: '⚠️ Certaines données sont encore en cours de finalisation. Cette page est mise à jour progressivement. Vérifiez toujours directement on-chain.',
   };
 
   return (
@@ -127,10 +125,6 @@ export default function TransparencyPage({ lang }: Props) {
           <ExternalLink size={16} />
         </a>
         <p className="text-sm text-[#475467] mt-4">{t.links.explorer_hint}</p>
-      </div>
-
-      <div className="mt-8 text-center">
-        <p className="text-sm text-red-500">{t.risk_notice}</p>
       </div>
     </div>
   );

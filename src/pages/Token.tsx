@@ -7,7 +7,7 @@ export default function TokenPage({ lang }: Props) {
   const t = lang === 'en' ? {
     title: 'Token ELY',
     subtitle: 'Learn about the native digital asset powering the ElyNova ecosystem.',
-    symbol: 'EL Y',
+    symbol: 'ELY',
     network: 'Solana',
     total_supply: '350,000,000 ELY',
     contract_addr: 'TBD (to be confirmed by project owner)',
@@ -18,11 +18,10 @@ export default function TokenPage({ lang }: Props) {
     utility_future: 'Future Use Cases',
     utility_future_items: ['DeFi integrations', 'NFT marketplace purchases', 'Cross-chain bridge participation', 'DAO treasury management'],
     link_title: 'Official Links',
-    risk_disclosure: '⚠️ Digital assets carry significant risk. Their value may decrease or become worthless. Blockchain transactions are irreversible. This website does not provide financial advice. Please read our full Risk Disclosure before participating.',
   } : {
     title: 'Token ELY',
     subtitle: 'Découvrez l\'actif numérique natif qui alimente l\'écosystème ElyNova.',
-    symbol: 'EL Y',
+    symbol: 'ELY',
     network: 'Solana',
     total_supply: '350 000 000 ELY',
     contract_addr: 'À confirmer (à préciser par le propriétaire du projet)',
@@ -33,7 +32,6 @@ export default function TokenPage({ lang }: Props) {
     utility_future: 'Usages Futurs',
     utility_future_items: ['Intégrations DeFi', 'Achats sur la marketplace NFT', 'Participation aux ponts inter-chaînes', 'Gestion du trésor DAO'],
     link_title: 'Liens Officiels',
-    risk_disclosure: '⚠️ Les actifs numériques comportent des risques importants. Leur valeur peut diminuer ou devenir nulle. Les transactions blockchain sont irréversibles. Ce site ne fournit pas de conseil financier. Veuillez lire notre Avertissement complet sur les risques avant de participer.',
   };
 
   return (
@@ -108,10 +106,6 @@ export default function TokenPage({ lang }: Props) {
               {lang === 'en' ? 'View Tokenomics' : 'Voir la Tokenomics'}
               <ArrowRight size={18} />
             </Link>
-          </div>
-
-          <div className="bg-red-50 border border-red-200 rounded-2xl p-6">
-            <p className="text-sm text-red-700 leading-relaxed">{t.risk_disclosure}</p>
           </div>
         </div>
       </div>
