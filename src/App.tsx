@@ -1,33 +1,54 @@
-import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import Tokenomics from './components/Tokenomics';
-import Roadmap from './components/Roadmap';
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import EcosystemPage from './pages/Ecosystem';
+import TokenPage from './pages/Token';
+import TokenomicsPage from './pages/Tokenomics';
+import MiningPage from './pages/Mining';
+import RoadmapPage from './pages/Roadmap';
+import TransparencyPage from './pages/Transparency';
+import SecurityPage from './pages/Security';
+import NewsPage from './pages/News';
+import FAQPage from './pages/FAQ';
+import ContactPage from './pages/Contact';
 
 export default function App() {
-  const [scrolled, setScrolled] = useState(false);
-  const [lang, setLang] = useState<'en' | 'fr'>('en');
+  const [lang, setLang] = useState<'en' | 'fr'>(() => {
+    return (localStorage.getItem('lang') as 'en' | 'fr') || 'en';
+  });
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const toggleLang = () => setLang(l => l === 'en' ? 'fr' : 'en');
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
-      <Navbar scrolled={scrolled} lang={lang} toggleLang={toggleLang} />
-      <main>
-        <Hero lang={lang} />
-        <Features lang={lang} />
-        <Tokenomics lang={lang} />
-        <Roadmap lang={lang} />
-      </main>
-      <Footer lang={lang} />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-white text-[#172033] flex flex-col">
+        <Navbar lang={lang} toggleLang={toggleLang} />
+        <main className="flex-grow pt-20">
+          <Routes>
+            <Route path="/" element={<Home lang={lang} />} />
+            <Route path="/about" element={<About lang={lang} />} />
+            <Route path="/ecosystem" element={<EcosystemPage lang={lang} />} />
+            <Route path="/token" element={<TokenPage lang={lang} />} />
+            <Route path="/tokenomics" element={<TokenomicsPage lang={lang} />} />
+            <Route path="/mining" element={<MiningPage lang={lang} />} />
+            <Route path="/roadmap" element={<RoadmapPage lang={lang} />} />
+            <Route path="/transparency" element={<TransparencyPage lang={lang} />} />
+            <Route path="/security" element={<SecurityPage lang={lang} />} />
+            <Route path="/news" element={<NewsPage lang={lang} />} />
+            <Route path="/faq" element={<FAQPage lang={lang} />} />
+            <Route path="/contact" element={<ContactPage lang={lang} />} />
+          </Routes>
+        </main>
+        <Footer lang={lang} />
+      </div>
+    </Router>
   );
 }

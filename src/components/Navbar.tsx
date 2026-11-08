@@ -1,98 +1,98 @@
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Download, Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, ExternalLink } from 'lucide-react';
+import { translations } from '../translations';
 
 interface Props {
-  scrolled: boolean;
   lang: 'en' | 'fr';
   toggleLang: () => void;
 }
 
-const nav = {
-  en: [
-    { href: '#hero', label: 'Home' },
-    { href: '#features', label: 'Features' },
-    { href: '#tokenomics', label: 'Tokenomics' },
-    { href: '#roadmap', label: 'Roadmap' },
-  ],
-  fr: [
-    { href: '#hero', label: 'Accueil' },
-    { href: '#features', label: 'Fonctionnalités' },
-    { href: '#tokenomics', label: 'Tokenomics' },
-    { href: '#roadmap', label: 'Feuille de Route' },
-  ],
-};
+export default function Navbar({ lang, toggleLang }: Props) {
+  const [isOpen, setIsOpen] = useState(false);
+  const t = translations[lang].nav;
 
-export default function Navbar({ scrolled, lang, toggleLang }: Props) {
-  const [open, setOpen] = useState(false);
-  const items = nav[lang];
+  const links = [
+    { name: t.home, path: '/' },
+    { name: t.about, path: '/about' },
+    { name: t.ecosystem, path: '/ecosystem' },
+    { name: t.token, path: '/token' },
+    { name: t.tokenomics, path: '/tokenomics' },
+  ];
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const moreLinks = [
+    { name: t.mining, path: '/mining' },
+    { name: t.roadmap, path: '/roadmap' },
+    { name: t.transparency, path: '/transparency' },
+    { name: t.security, path: '/security' },
+  ];
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/90 backdrop-blur-lg shadow-sm border-b border-slate-100' : 'bg-transparent'
-      }`}
-    >
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#hero" className="flex items-center gap-3" onClick={(e) => handleClick(e, '#hero')}>
-          <img src="/assets/token_1767780195906-1jc-AAZZ.png" alt="ElyNova" className="w-8 h-8 object-contain" />
-          <span className="text-xl font-bold text-slate-900">ElyNova</span>
-        </a>
+    <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-[#E5EAF2]">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-2">
+          <img src="/assets/token_1767780195906-1jc-AAZZ.png" alt="ElyNova" className="w-10 h-10" />
+          <span className="text-xl font-bold text-[#1746D2]">ElyNova</span>
+        </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1">
-          {items.map(item => (
-            <a key={item.href} href={item.href} onClick={(e) => handleClick(e, item.href)}
-              className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-blue-600 rounded-lg hover:bg-blue-50 transition-colors">
-              {item.label}
-            </a>
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center gap-8">
+          {links.map((link) => (
+            <Link key={link.path} to={link.path} className="text-sm font-medium text-[#475467] hover:text-[#1746D2] transition-colors">
+              {link.name}
+            </Link>
           ))}
-        </nav>
 
-        {/* Right side */}
-        <div className="flex items-center gap-3">
-          <button onClick={toggleLang} className="flex items-center gap-2 px-3 py-2 text-sm text-slate-500 hover:text-blue-600 rounded-lg hover:bg-blue-50 transition-colors">
-            <Globe className="w-4 h-4" />
-            <span className="hidden sm:inline">{lang === 'en' ? 'FR' : 'EN'}</span>
-          </button>
-
-          <a href="#hero" onClick={(e) => handleClick(e, '#hero')}
-            className="flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white text-sm font-semibold rounded-xl hover:bg-blue-700 transition-all hover:shadow-lg active:scale-95">
-            <Download className="w-4 h-4" />
-            <span className="hidden sm:inline">{lang === 'en' ? 'Download' : 'Télécharger'}</span>
-          </a>
-
-          <button onClick={() => setOpen(!open)} className="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-lg">
-            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {open && (
-          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-slate-100 overflow-hidden">
-            <div className="px-6 py-4 space-y-1">
-              {items.map(item => (
-                <a key={item.href} href={item.href} onClick={(e) => handleClick(e, item.href)}
-                  className="block px-4 py-3 text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                  {item.label}
-                </a>
+          <div className="relative group">
+            <button className="text-sm font-medium text-[#475467] group-hover:text-[#1746D2] flex items-center gap-1">
+              {lang === 'en' ? 'More' : 'Plus'}
+            </button>
+            <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-[#E5EAF2] rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all py-2">
+              {moreLinks.map((link) => (
+                <Link key={link.path} to={link.path} className="block px-4 py-2 text-sm text-[#475467] hover:bg-[#EFF4FF] hover:text-[#1746D2]">
+                  {link.name}
+                </Link>
               ))}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+          </div>
+        </div>
+
+        <div className="hidden lg:flex items-center gap-4">
+          <button onClick={toggleLang} className="p-2 text-[#475467] hover:bg-[#EFF4FF] rounded-lg transition-colors flex items-center gap-2">
+            <Globe size={18} />
+            <span className="text-sm font-bold uppercase">{lang === 'en' ? 'FR' : 'EN'}</span>
+          </button>
+          <a href="#" className="btn-primary py-2 px-5 text-sm">
+            {t.openApp}
+            <ExternalLink size={14} />
+          </a>
+        </div>
+
+        {/* Mobile Toggle */}
+        <button className="lg:hidden p-2 text-[#172033]" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="lg:hidden bg-white border-b border-[#E5EAF2] px-6 py-8 flex flex-col gap-6">
+          {[...links, ...moreLinks].map((link) => (
+            <Link key={link.path} to={link.path} onClick={() => setIsOpen(false)} className="text-lg font-semibold text-[#172033]">
+              {link.name}
+            </Link>
+          ))}
+          <div className="flex flex-col gap-4 pt-4 border-t border-[#E5EAF2]">
+            <button onClick={() => { toggleLang(); setIsOpen(false); }} className="flex items-center gap-2 text-[#172033] font-semibold">
+              <Globe size={20} />
+              {lang === 'en' ? 'Switch to French' : 'Passer en Anglais'}
+            </button>
+            <a href="#" className="btn-primary w-full">
+              {t.openApp}
+            </a>
+          </div>
+        </div>
+      )}
+    </nav>
   );
 }
