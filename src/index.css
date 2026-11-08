@@ -11,11 +11,29 @@
     --text-main: #172033;
     --text-sec: #475467;
     --border: #E5EAF2;
+    --card-bg: #ffffff;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+  }
+
+  .dark {
+    --primary: #60a5fa;
+    --accent: #f472b6;
+    --bg-blue: #0f1d32;
+    --bg-magenta: #1a0f1e;
+    --text-main: #f1f5f9;
+    --text-sec: #94a3b8;
+    --border: #1e293b;
+    --card-bg: #0f1d32;
+    --nav-bg: rgba(15, 29, 50, 0.85);
   }
 
   body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    @apply bg-white text-[#172033] antialiased;
+    @apply bg-white text-[#172033] antialiased transition-colors duration-200;
+  }
+
+  html.dark body {
+    @apply bg-[#0a0f1a] text-[#f1f5f9] antialiased;
   }
 }
 
@@ -36,8 +54,19 @@
     @apply bg-white border border-[#E5EAF2] rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow;
   }
 
+  .dark .card-white {
+    @apply bg-[#0f1d32] border-[#1e293b] text-[#f1f5f9];
+  }
+
   .gradient-text {
     background: linear-gradient(135deg, #1746D2, #D12B9A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .dark .gradient-text {
+    background: linear-gradient(135deg, #60a5fa, #f472b6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

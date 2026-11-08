@@ -11,20 +11,20 @@ export default function Hero({ lang }: Props) {
   return (
     <section id="hero" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50" />
-      <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-blue-100/50 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-violet-100/50 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-[#0f1d32] dark:via-[#0a1628] dark:to-[#0f1d32]" />
+      <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-blue-100/50 rounded-full blur-3xl dark:bg-blue-900/20" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-violet-100/50 rounded-full blur-3xl dark:bg-violet-900/20" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left */}
           <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold mb-6 dark:bg-blue-900/30 dark:text-blue-300">
               <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" />
               {lang === 'en' ? 'Early Access' : 'Accès Précoces'}
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight mb-6">
+            <h1 className="text-5xl md:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight mb-6 dark:text-white">
               {lang === 'en' ? (
                 <>Mine <span className="text-blue-600">ELY</span>,<br />The Future<br />is <span className="gradient-text">Today</span></>
               ) : (
@@ -32,7 +32,7 @@ export default function Hero({ lang }: Props) {
               )}
             </h1>
 
-            <p className="text-lg text-slate-600 max-w-md mb-8 leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-md mb-8 leading-relaxed dark:text-slate-300">
               {lang === 'en'
                 ? 'A transparent community-driven blockchain ecosystem on Solana — built for accessibility and growth in global digital communities.'
                 : 'Un écosystème blockchain communautaire transparent sur Solana — conçu pour l\'accessibilité et la croissance dans les communautés numériques mondiales.'}
@@ -54,7 +54,7 @@ export default function Hero({ lang }: Props) {
                 { icon: Shield, label: lang === 'en' ? 'Secure' : 'Sécurisé' },
                 { icon: () => <span className="text-2xl">🆓</span>, label: lang === 'en' ? 'Free' : 'Gratuit' },
               ].map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-2 text-sm text-slate-500">
+                <div key={label} className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
                   <Icon className="w-4 h-4 text-blue-600" />
                   {label}
                 </div>
@@ -76,7 +76,7 @@ export default function Hero({ lang }: Props) {
 
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <ArrowDown className="w-6 h-6 text-slate-400" />
+        <ArrowDown className="w-6 h-6 text-slate-400 dark:text-slate-500" />
       </motion.div>
     </section>
   );
