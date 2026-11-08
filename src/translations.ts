@@ -37,7 +37,7 @@ export const translations = {
     },
     footer: {
       rights: 'All rights reserved.',
-      tagline: 'Mining made simple. Join the mobile crypto revolution.',
+      tagline: 'Mining made simple. Join the Web3 revolution.',
     }
   },
   fr: {
@@ -78,7 +78,7 @@ export const translations = {
     },
     footer: {
       rights: 'Tous droits réservés.',
-      tagline: 'Le minage rendu simple. Rejoignez la révolution crypto mobile.',
+      tagline: 'Le minage rendu simple. Rejoignez la révolution Web3.',
     }
   }
 };

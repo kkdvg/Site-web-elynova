@@ -4,14 +4,14 @@ import { Rocket, TrendingUp, Globe, Zap } from 'lucide-react';
 interface Props { lang: 'en' | 'fr'; }
 
 const PHASES_EN = [
-  { phase: 'Q1-Q2 2026', title: 'Foundation & Launch', status: 'completed', icon: Rocket, items: ['ElyNova app launch (iOS & Android)', 'Community milestone: 500K+ registered users', 'Official ELY token generation on Solana', 'Bug bounty program launched'] },
+  { phase: 'Q1-Q2 2026', title: 'Foundation & Launch', status: 'completed', icon: Rocket, items: ['Community platform launch', 'Community milestone: 500K+ registered users', 'Official ELY token generation on Solana', 'Bug bounty program launched'] },
   { phase: 'Q2-Q3 2026', title: 'Growth Phase', status: 'in_progress', icon: TrendingUp, items: ['Referral program activated', 'First community airdrop distributed', 'Strategic partnerships initiated', 'Staking features in development'] },
   { phase: 'Q3-Q4 2026', title: 'Expansion', status: 'planned', icon: Globe, items: ['Multi-chain deployment exploration', 'Mobile wallet integration', 'DEX listing application', 'Governance voting system implementation'] },
   { phase: '2027+', title: 'Ecosystem Growth', status: 'planned', icon: Zap, items: ['CEX listings (announced candidates)', 'NFT marketplace launch', 'DeFi protocol integrations', 'ElyNova DAO governance activation'] },
 ];
 
 const PHASES_FR = [
-  { phase: 'T1-T2 2026', title: 'Fondation & Lancement', status: 'completed', icon: Rocket, items: ['Lancement app ElyNova (iOS & Android)', 'Jalon communauté : 500K+ utilisateurs inscrits', 'Génération officielle du token ELY sur Solana', 'Programme bug bounty lancé'] },
+  { phase: 'T1-T2 2026', title: 'Fondation & Lancement', status: 'completed', icon: Rocket, items: ['Lancement de la plateforme communautaire', 'Jalon communauté : 500K+ utilisateurs inscrits', 'Génération officielle du token ELY sur Solana', 'Programme bug bounty lancé'] },
   { phase: 'T2-T3 2026', title: 'Phase de Croissance', status: 'in_progress', icon: TrendingUp, items: ['Programme de parrainage activé', 'Premier airdrop communautaire distribué', 'Partenariats stratégiques initiés', 'Fonctionnalités staking en développement'] },
   { phase: 'T3-T4 2026', title: 'Expansion', status: 'planned', icon: Globe, items: ['Exploration déploiement multi-chaîne', 'Intégration wallet mobile', 'Candidature listing DEX', 'Implémentation système de vote gouvernance'] },
   { phase: '2027+', title: 'Croissance Écosystème', status: 'planned', icon: Zap, items: ['Listings CEX (candidats annoncés)', 'Lancement marketplace NFT', 'Intégrations protocoles DeFi', 'Activation DAO ElyNova'] },

@@ -9,10 +9,10 @@ interface FAQItem {
 }
 
 const FAQ_DATA_EN: FAQItem[] = [
-  { q: 'What is ElyNova?', a: 'ElyNova is a community-driven blockchain initiative built on Solana, focused on making crypto participation accessible through mobile mining, community programs, and transparent tokenomics.' },
+  { q: 'What is ElyNova?', a: 'ElyNova is a community-driven blockchain initiative built on Solana, focused on making crypto participation accessible through mining, community programs, and transparent tokenomics.' },
   { q: 'What is the ELY token?', a: 'EL Y is the native digital asset of the ElyNova ecosystem, operating on the Solana blockchain with a fixed total supply of 350,000,000 ELY.' },
   { q: 'On which blockchain does ELY work?', a: 'EL Y operates exclusively on the Solana blockchain, chosen for its speed, low transaction costs, and scalability.' },
-  { q: 'How does mining work?', a: 'ElyNova mining runs through a mobile app. Daily cycles accumulate rewards based on your activity, missions completed, and referrals. Withdrawals are processed to your linked Solana wallet.' },
+  { q: 'How does mining work?', a: 'ElyNova mining runs through an application. Daily cycles accumulate rewards based on your activity, missions completed, and referrals. Withdrawals are processed to your linked Solana wallet.' },
   { q: 'How do I withdraw tokens?', a: 'Link your Solana wallet in the app settings, reach the minimum withdrawal threshold, and submit a withdrawal request. Processing typically takes 24-48 hours on-chain.' },
   { q: 'How can I verify a transaction?', a: 'Use Solscan.io — enter the transaction hash or wallet address to view all on-chain transactions. Any verified address will appear publicly.' },
   { q: 'How does the referral program work?', a: 'Share your unique referral code through the app. When someone signs up using your code, both you and the new member receive bonus tokens (subject to current program rules).' },
@@ -21,10 +21,10 @@ const FAQ_DATA_EN: FAQItem[] = [
 ];
 
 const FAQ_DATA_FR: FAQItem[] = [
-  { q: 'Qu\'est-ce qu\'ElyNova ?', a: 'ElyNova est une initiative blockchain communautaire construite sur Solana, visant à rendre la participation crypto accessible via le minage mobile, les programmes communautaires et une tokenomics transparente.' },
+  { q: 'Qu\'est-ce qu\'ElyNova ?', a: 'ElyNova est une initiative blockchain communautaire construite sur Solana, visant à rendre la participation crypto accessible via le minage, les programmes communautaires et une tokenomics transparente.' },
   { q: 'Qu\'est-ce que le token ELY ?', a: 'EL Y est l\'actif numérique natif de l\'écosystème ElyNova, fonctionnant sur la blockchain Solana avec une offre totale fixe de 350 000 000 ELY.' },
   { q: 'Sur quelle blockchain fonctionne le token ?', a: 'EL Y opère exclusivement sur la blockchain Solana, choisie pour sa rapidité, ses frais de transaction bas et sa scalabilité.' },
-  { q: 'Comment fonctionne le minage ?', a: 'Le minage ElyNova s\'effectue via une application mobile. Des cycles quotidiens accumulent des récompenses basées sur votre activité, les missions accomplies et vos parrainages. Les retraits sont traités vers votre portefeuille Solana lié.' },
+  { q: 'Comment fonctionne le minage ?', a: 'Le minage ElyNova s\'effectue via une application. Des cycles quotidiens accumulent des récompenses basées sur votre activité, les missions accomplies et vos parrainages. Les retraits sont traités vers votre portefeuille Solana lié.' },
   { q: 'Comment retirer les tokens ?', a: 'LieZ votre portefeuille Solana dans les paramètres de l\'application, atteignez le seuil minimum de retrait et soumettez une demande. Le traitement prend généralement 24-48 heures on-chain.' },
   { q: 'Comment vérifier une transaction ?', a: 'Utilisez Solscan.io — saisissez le hash de transaction ou l\'adresse du portefeuille pour voir toutes les transactions on-chain. Toute adresse vérifiée apparaîtra publiquement.' },
   { q: 'Comment fonctionne le programme de parrainage ?', a: 'Partagez votre code de parrainage unique via l\'application. Quand quelqu\'un s\'inscrit avec votre code, vous et la nouvelle personne recevez des tokens bonus (sous réserve des règles actuelles du programme).' },

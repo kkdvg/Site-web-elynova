@@ -10,8 +10,8 @@ export default function Home({ lang }: Props) {
 
   const ct = isEn ? {
     tagline: 'BUILD. PARTICIPATE. GROW.',
-    hero_title: 'The Future of Mobile Mining',
-    hero_subtitle: 'A transparent community-driven blockchain ecosystem on Solana — built for accessibility and growth in emerging markets across Africa, Asia, and Latin America.',
+    hero_title: 'The Future of Web3 Mining',
+    hero_subtitle: 'A transparent community-driven blockchain ecosystem on Solana — built for accessibility and growth in global digital communities.',
     explore_eco: 'Explore the Ecosystem',
     discover_token: 'Discover ELY Token',
     pillars_title: 'Our Core Pillars',
@@ -20,17 +20,17 @@ export default function Home({ lang }: Props) {
     pillar_blockchain: 'Solana Blockchain',
     pillar_blockchain_desc: 'Powered by Solana — fast, low-cost transactions you can verify yourself.',
     pillar_ecosystem: 'Growing Ecosystem',
-    pillar_ecosystem_desc: 'Mining app, airdrops, referrals, and future integrations — all in one platform.',
+    pillar_ecosystem_desc: 'Mining platform, airdrops, referrals, and future integrations — all in one place.',
 
     // Old features restored
     features_tag: 'Key Advantages',
-    features_title: 'Everything You Need to Mine',
+    features_title: 'Everything You Need to Participate',
     features: [
-      { icon: Smartphone, title: 'Mobile Mining', desc: 'Start mining with a single tap. No complex setup, no technical knowledge required.' },
+      { icon: Smartphone, title: 'Easy Mining', desc: 'Start participating with a single tap. No complex setup, no technical knowledge required.' },
       { icon: Gift, title: 'Regular Airdrops', desc: 'Earn extra tokens through exclusive airdrops and community events.' },
       { icon: Users, title: 'Referral Program', desc: 'Invite friends and earn bonus tokens for every successful referral.' },
       { icon: Layout, title: 'Easy Interface', desc: 'Clean, intuitive design that anyone can use from day one.' },
-      { icon: Brain, title: 'Smart Ecosystem', desc: 'Optimized mining algorithms that maximize your rewards efficiently.' },
+      { icon: Brain, title: 'Smart Ecosystem', desc: 'Optimized algorithms that maximize your participation efficiently.' },
       { icon: Shield, title: 'Secure Infrastructure', desc: 'Your participation is protected with industry-standard security measures.' },
     ],
 
@@ -40,10 +40,10 @@ export default function Home({ lang }: Props) {
     token_symbol: 'Symbol: ELY',
     token_status: 'Status: Active Community Program',
     ecosystems_title: 'Ecosystem Products',
-    mining_prod: 'ElyNova Mining App',
+    mining_prod: 'ElyNova Mining Platform',
     mining_status: 'Available',
     mining_status_badge: 'bg-emerald-100 text-emerald-700',
-    mining_desc: 'Mobile community mining with daily cycles, missions, and referral bonuses.',
+    mining_desc: 'Community mining with daily cycles, missions, and referral bonuses.',
     community_prod: 'ElyNova Community',
     community_status: 'Active',
     community_status_badge: 'bg-blue-100 text-blue-700',
@@ -54,7 +54,7 @@ export default function Home({ lang }: Props) {
     token_prod_desc: 'Native digital asset with fixed supply of 350M ELY — verified on-chain.',
     roadmap_title: 'Roadmap Highlights',
     road_complete: 'Foundation & Launch',
-    road_complete_items: ['App launch iOS & Android', '500K+ community milestone', 'Official ELY token generation'],
+    road_complete_items: ['Community platform launch', '500K+ community milestone', 'Official ELY token generation'],
     road_in_progress: 'Growth Phase',
     road_in_progress_items: ['Staking features in progress', 'Partnership development', 'Liquidity deployment'],
     road_planned: 'Expansion Phase',
@@ -66,8 +66,8 @@ export default function Home({ lang }: Props) {
     risk_note: '⚠️ Digital assets are volatile. Past performance does not guarantee future results. Read our Risk Disclosure.',
   } : {
     tagline: 'CONSTRUIRE. PARTICIPER. GRANDIR.',
-    hero_title: 'L\'Avenir du Minage Mobile',
-    hero_subtitle: 'Un écosystème blockchain communautaire transparent sur Solana — conçu pour l\'accessibilité et la croissance dans les marchés émergents d\'Afrique, d\'Asie et d\'Amérique latine.',
+    hero_title: 'L\'Avenir du Minage Web3',
+    hero_subtitle: 'Un écosystème blockchain communautaire transparent sur Solana — conçu pour l\'accessibilité et la croissance dans les communautés numériques mondiales.',
     explore_eco: 'Explorer l\'écosystème',
     discover_token: 'Découvrir le Token ELY',
     pillars_title: 'Nos Piliers Fondamentaux',
@@ -76,17 +76,17 @@ export default function Home({ lang }: Props) {
     pillar_blockchain: 'Blockchain Solana',
     pillar_blockchain_desc: 'Propulsé par Solana — des transactions rapides et peu coûteuses que vous pouvez vérifier vous-même.',
     pillar_ecosystem: 'Écosystème en Croissance',
-    pillar_ecosystem_desc: 'Application de minage, airdrops, parrainages et futures intégrations — tout en un seul endroit.',
+    pillar_ecosystem_desc: 'Plateforme de minage, airdrops, parrainages et futures intégrations — tout en un seul endroit.',
 
     // Old features restored
     features_tag: 'Avantages Clés',
     features_title: 'Tout ce dont vous avez besoin',
     features: [
-      { icon: Smartphone, title: 'Minage Mobile', desc: 'Commencez à miner d\'une simple pression. Pas de configuration complexe, aucune connaissance technique.' },
+      { icon: Smartphone, title: 'Minage Facile', desc: 'Commencez à participer d\'une simple pression. Pas de configuration complexe, aucune connaissance technique.' },
       { icon: Gift, title: 'Airdrops Réguliers', desc: 'Gagnez des tokens supplémentaires grâce aux airdrops exclusifs et événements.' },
       { icon: Users, title: 'Parrainage', desc: 'Invitez des amis et gagnez des tokens bonus pour chaque parrainage réussi.' },
       { icon: Layout, title: 'Interface Simple', desc: 'Un design clair et intuitif utilisable par tous dès le premier jour.' },
-      { icon: Brain, title: 'Écosystème Intelligent', desc: 'Algorithmes de minage optimisés pour maximiser vos récompenses efficacement.' },
+      { icon: Brain, title: 'Écosystème Intelligent', desc: 'Algorithmes optimisés pour maximiser votre participation efficacement.' },
       { icon: Shield, title: 'Infrastructure Sécurisée', desc: 'Votre participation est protégée par les mesures de sécurité les plus avancées.' },
     ],
 
@@ -96,10 +96,10 @@ export default function Home({ lang }: Props) {
     token_symbol: 'Symbole : ELY',
     token_status: 'Statut : Programme Communautaire Actif',
     ecosystems_title: 'Produits de l\'Écosystème',
-    mining_prod: 'App de Minage ElyNova',
+    mining_prod: 'Plateforme de Minage ElyNova',
     mining_status: 'Disponible',
     mining_status_badge: 'bg-emerald-100 text-emerald-700',
-    mining_desc: 'Minage mobile communautaire avec cycles quotidiens, missions et bonus de parrainage.',
+    mining_desc: 'Minage communautaire avec cycles quotidiens, missions et bonus de parrainage.',
     community_prod: 'Communauté ElyNova',
     community_status: 'Actif',
     community_status_badge: 'bg-blue-100 text-blue-700',
@@ -110,7 +110,7 @@ export default function Home({ lang }: Props) {
     token_prod_desc: 'Actif numérique natif avec offre fixe de 350M ELY — vérifiable on-chain.',
     roadmap_title: 'Jalons de la Feuille de Route',
     road_complete: 'Fondation & Lancement',
-    road_complete_items: ['Lancement app iOS & Android', 'Jalon 500K+ communauté', 'Génération officielle du token ELY'],
+    road_complete_items: ['Lancement de la plateforme communautaire', 'Jalon 500K+ communauté', 'Génération officielle du token ELY'],
     road_in_progress: 'Phase de Croissance',
     road_in_progress_items: ['Fonctionnalités staking en cours', 'Développement partenariats', 'Déploiement liquidité'],
     road_planned: 'Phase d\'Expansion',
@@ -156,7 +156,7 @@ export default function Home({ lang }: Props) {
 
             <h1 className="text-5xl md:text-7xl font-black text-[#172033] leading-[1.1] mb-6">
               <span className="text-[#1746D2] block text-2xl uppercase tracking-widest mb-4">{ct.tagline}</span>
-              {isEn ? <>Mine <span className="gradient-text">ELY</span>, The Future is <span className="gradient-text">Mobile</span></> : <>Minez <span className="gradient-text">ELY</span>, L'Avenir est <span className="gradient-text">Mobile</span></>}
+              {isEn ? <>Mine <span className="gradient-text">ELY</span>, The Future is <span className="gradient-text">Today</span></> : <>Minez <span className="gradient-text">ELY</span>, L'Avenir est <span className="gradient-text">Maintenant</span></>}
             </h1>
 
             <p className="text-lg text-[#475467] max-w-xl mb-8 leading-relaxed">{ct.hero_subtitle}</p>

@@ -10,10 +10,9 @@ export default function About({ lang }: Props) {
     en: {
       tag: 'About ElyNova',
       title: 'Building the Future of Web3 in Emerging Markets',
-      desc: 'ElyNova is a community-driven blockchain initiative designed to bring accessible crypto participation to millions of users across Africa, Asia, and Latin America.',
+      desc: 'ElyNova is a community-driven blockchain initiative designed to bring accessible crypto participation to users worldwide.',
       cards: [
         { icon: Target, title: 'Our Vision & Mission', desc: 'To democratize access to digital assets and mobile mining, empowering individuals with user-friendly blockchain tools.' },
-        { icon: Globe2, title: 'Target Regions', desc: 'Focusing on high-growth digital communities across Africa, Asia, and Latin America where mobile adoption is soaring.' },
         { icon: HeartHandshake, title: 'Core Values', desc: 'Transparency, community participation, accountability, and sustainable growth without financial guarantees or hype.' },
         { icon: ShieldCheck, title: 'Strict Transparency', desc: 'We only present operational features and verified on-chain data. No unrealistic promises or unverified claims.' },
       ],
@@ -21,10 +20,9 @@ export default function About({ lang }: Props) {
     fr: {
       tag: 'À propos d’ElyNova',
       title: 'Construire l’Avenir du Web3 dans les Marchés Émergents',
-      desc: 'ElyNova est une initiative blockchain communautaire conçue pour apporter une participation crypto accessible à des millions d’utilisateurs en Afrique, en Asie et en Amérique latine.',
+      desc: 'ElyNova est une initiative blockchain communautaire conçue pour apporter une participation crypto accessible aux utilisateurs du monde entier.',
       cards: [
         { icon: Target, title: 'Vision & Mission', desc: 'Démocratiser l’accès aux actifs numériques et au minage mobile, en donnant aux individus des outils blockchain conviviaux.' },
-        { icon: Globe2, title: 'Marchés Cibles', desc: 'Focus sur les communautés à fort dynamisme en Afrique, en Asie et en Amérique latine où l’adoption mobile est en plein essor.' },
         { icon: HeartHandshake, title: 'Valeurs Clés', desc: 'Transparence, participation communautaire, responsabilité et croissance durable sans promesses de rendement financier.' },
         { icon: ShieldCheck, title: 'Transparence Stricte', desc: 'Nous ne présentons que les fonctionnalités opérationnelles et les données on-chain vérifiées. Aucune promesse irréaliste.' },
       ],
