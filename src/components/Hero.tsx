@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Zap, Shield, ArrowDown } from 'lucide-react';
+import { Zap, Shield, ArrowDown, Globe2 } from 'lucide-react';
 
 interface Props {
   lang: 'en' | 'fr';
@@ -19,40 +19,36 @@ export default function Hero({ lang }: Props) {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left */}
           <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold mb-6 dark:bg-blue-900/30 dark:text-blue-300">
-              <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" />
-              {lang === 'en' ? 'Early Access' : 'Accès Précoces'}
-            </div>
 
             <h1 className="text-5xl md:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight mb-6 dark:text-white">
               {lang === 'en' ? (
-                <>Mine <span className="text-blue-600">ELY</span>,<br />The Future<br />is <span className="gradient-text">Today</span></>
+                <>The Future of<br /><span className="gradient-text">Crypto Mining</span><br />Is Here</>
               ) : (
-                <>Minez <span className="text-blue-600">ELY</span>,<br />L'Avenir<br />est <span className="gradient-text">Maintenant</span></>
+                <>Le Futur du<br /><span className="gradient-text">Minage Crypto</span><br />Est Là</>
               )}
             </h1>
 
             <p className="text-lg text-slate-600 max-w-md mb-8 leading-relaxed dark:text-slate-300">
               {lang === 'en'
-                ? 'A transparent community-driven blockchain ecosystem on Solana — built for accessibility and growth in global digital communities.'
-                : 'Un écosystème blockchain communautaire transparent sur Solana — conçu pour l\'accessibilité et la croissance dans les communautés numériques mondiales.'}
+                ? 'Mine ELY tokens from your phone — no downloads, no battery drain, no hidden fees. Transparent on Solana, trusted by the community.'
+                : 'Minez des tokens ELY depuis votre téléphone — sans téléchargement, sans consommation de batterie, sans frais cachés. Transparent sur Solana, fiable par la communauté.'}
             </p>
 
             <div className="flex flex-wrap gap-4 mb-10">
               <a href="https://t.me/ElyNova_bot?start=ref_6628765249" target="_blank" rel="noreferrer" className="btn-primary">
                 <Zap className="w-5 h-5" />
-                {lang === 'en' ? 'Start Mining' : 'Commencer'}
+                {lang === 'en' ? 'Start Mining Free' : 'Commencer Gratuitement'}
               </a>
               <a href="#features" className="btn-secondary">
-                {lang === 'en' ? 'How it Works' : 'Comment ça marche'}
+                {lang === 'en' ? 'Learn More' : 'En Savoir Plus'}
               </a>
             </div>
 
             <div className="flex items-center gap-8">
               {[
-                { icon: Zap, label: lang === 'en' ? 'No Battery' : 'Pas de batterie' },
-                { icon: Shield, label: lang === 'en' ? 'Secure' : 'Sécurisé' },
-                { icon: () => <span className="text-2xl">🆓</span>, label: lang === 'en' ? 'Free' : 'Gratuit' },
+                { icon: Zap, label: lang === 'en' ? 'Zero Battery' : '0% Batterie' },
+                { icon: Shield, label: lang === 'en' ? 'Fully Verified' : 'Entièrement Vérifié' },
+                { icon: Globe2, label: lang === 'en' ? 'On Solana' : 'Sur Solana' },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
                   <Icon className="w-4 h-4 text-blue-600" />
