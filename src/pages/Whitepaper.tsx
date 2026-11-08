@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ShieldCheck, Zap, Users, ArrowRight, BookOpen, Link as LinkIcon } from 'lucide-react';
+import { ShieldCheck, Zap, Users, ArrowRight, BookOpen, Link as LinkIcon, Coins, Wallet, Gift, Landmark, Rocket } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface Props { lang: 'en' | 'fr'; }
@@ -42,8 +42,8 @@ export default function WhitepaperPage({ lang }: Props) {
             className="text-xl text-[#475467] max-w-2xl mx-auto leading-relaxed"
           >
             {isEn
-              ? 'A transparent technical document for the ElyNova community. Build trust through clarity, verify everything yourself.'
-              : 'Un document technique transparent pour la communauté ElyNova. Bâtir la confiance par la clarté, vérifiez tout vous-même.'}
+              ? 'Everything you need to know about ELY and ElyNova. Simple, transparent, no hidden tricks.'
+              : 'Tout ce que vous devez savoir sur ELY et ElyNova. Simple, transparent, sans surprise.'}
           </motion.p>
 
           <motion.div
@@ -52,33 +52,33 @@ export default function WhitepaperPage({ lang }: Props) {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-wrap justify-center gap-4 mt-10"
           >
-            <a href="#introduction" className="btn-primary inline-flex items-center gap-2">
-              {isEn ? 'Read Now' : 'Lire Maintenant'}
+            <a href="#token-utility" className="btn-primary inline-flex items-center gap-2">
+              {isEn ? 'What is ELY?' : "Qu'est-ce que ELY ?"}
               <ArrowRight size={18} />
             </a>
             <Link to="/tokenomics" className="border-2 border-[#1746D2] text-[#1746D2] px-6 py-3 rounded-xl font-bold hover:bg-[#EFF4FF] transition-colors inline-flex items-center gap-2">
               <LinkIcon size={18} />
-              {isEn ? 'Tokenomics' : 'Tokenomics'}
+              Tokenomics
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* ── Key Highlights ── */}
-      <section className="py-16 px-6 border-b border-[#E5EAF2]">
+      {/* ── Quick Stats ── */}
+      <section className="py-16 px-6 border-b border-[#E5EAF2] bg-slate-50">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { icon: Zap, label_en: 'Network', label_fr: 'Réseau', value: 'Solana', color: '#9945FF' },
-            { icon: ShieldCheck, label_en: 'Total Supply', label_fr: 'Offre Totale', value: '350M ELY', color: '#1746D2' },
-            { icon: Users, label_en: 'Governance', label_fr: 'Gouvernance', value: isEn ? 'Community' : 'Communautaire', color: '#D12B9A' },
-            { icon: BookOpen, label_en: 'Version', label_fr: 'Version', value: '1.0 • Nov 2026', color: '#475467' },
+            { label_en: 'Network', label_fr: 'Réseau', value: 'Solana' },
+            { label_en: 'Total Supply', label_fr: 'Offre Totale', value: '350M ELY' },
+            { label_en: 'Blockchain Explorer', label_fr: 'Explorateur', value: 'solscan.io' },
+            { label_en: 'Status', label_fr: 'Statut', value: 'Live & Verifiable' },
           ].map((h, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ delay: i * 0.08 }}
               className="text-center p-4"
             >
               <h3 className="text-2xl font-black text-[#172033]">{h.value}</h3>
@@ -89,59 +89,34 @@ export default function WhitepaperPage({ lang }: Props) {
       </section>
 
       {/* ── Main Content ── */}
-      <div id="introduction" className="max-w-4xl mx-auto px-6 py-20 space-y-20">
+      <div className="max-w-4xl mx-auto px-6 py-20 space-y-0">
 
-        {/* 1. Introduction */}
-        <section>
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+        {/* ── 1. What is ElyNova ── */}
+        <section id="introduction">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
             <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-2 block">
-              {isEn ? '01 — Introduction' : '01 — Introduction'}
+              {isEn ? '01 — What is ElyNova' : '01 — Qu\'est-ce que ElyNova'}
             </span>
             <h2 className="text-3xl font-black text-[#172033] mb-6">
-              {isEn ? 'What is ElyNova?' : 'Qu\'est-ce que ElyNova ?'}
+              {isEn ? 'A Community Built on Trust' : 'Une Communauté Bâtie sur la Confiance'}
             </h2>
-            <div className="prose prose-lg text-[#475467] leading-relaxed space-y-4">
+            <div className="space-y-4 text-[#475467] leading-relaxed text-lg">
               <p>
                 {isEn
-                  ? 'ElyNova is a community-driven blockchain initiative built on the Solana network. Our mission is simple: make crypto participation accessible, transparent, and rewarding for everyone — no matter where they are in the world.'
-                  : 'ElyNova est une initiative blockchain communautaire construite sur le réseau Solana. Notre mission est simple : rendre la participation crypto accessible, transparente et récompensante pour tous — peu importe où vous êtes dans le monde.'}
+                  ? 'ElyNova is a blockchain project built on Solana that lets anyone earn crypto directly from their phone — through Telegram. No complicated apps, no expensive fees, no middlemen.'
+                  : 'ElyNova est un projet blockchain construit sur Solana qui permet à n\'importe qui de gagner de la crypto directement depuis son téléphone — via Telegram. Pas d\'applis compliquées, pas de frais élevés, pas d\'intermédiaires.'}
               </p>
               <p>
                 {isEn
-                  ? 'We believe that financial inclusion starts with transparency. That\'s why every aspect of the ElyNova ecosystem — from token supply to wallet addresses — can be independently verified on-chain. No promises without proof.'
-                  : 'Nous croyons que l\'inclusion financière commence par la transparence. C\'est pourquoi chaque aspect de l\'écosystème ElyNova — de l\'offre de tokens aux adresses wallets — peut être vérifié indépendamment on-chain. Pas de promesses sans preuve.'}
+                  ? 'We believe that if you build something real, there is nothing to hide. That is why every single thing about ElyNova can be checked publicly on the blockchain.'
+                  : 'Nous croyons que si vous construisez quelque chose de réel, il n\'y a rien à cacher. C\'est pourquoi chaque chose concernant ElyNova peut être vérifiée publiquement sur la blockchain.'}
               </p>
-            </div>
-          </motion.div>
-        </section>
-
-        {/* Divider */}
-        <div className="border-t border-[#E5EAF2]" />
-
-        {/* 2. The Problem */}
-        <section>
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-2 block">
-              {isEn ? '02 — The Problem' : '02 — Le Problème'}
-            </span>
-            <h2 className="text-3xl font-black text-[#172033] mb-6">
-              {isEn ? 'Why We Built ElyNova' : 'Pourquoi Nous Avons Construit ElyNova'}
-            </h2>
-            <div className="space-y-4 text-[#475467] leading-relaxed">
-              <p>
-                {isEn
-                  ? 'Most blockchain projects operate behind closed doors. They promise returns, showcase hype, and leave their communities in the dark about how things actually work. This erodes trust and creates confusion.'
-                  : 'La plupart des projets blockchain opèrent en vase clos. Ils promettent des rendements, affichent du battage médiatique et laissent leurs communautés dans l\'obscurité quant au fonctionnement réel. Cela érode la confiance et crée de la confusion.'}
-              </p>
-              <p>
-                {isEn
-                  ? 'Participation barriers remain high: complex interfaces, expensive gas fees, intrusive KYC requirements, and opaque token distributions. Communities deserve better than empty roadmaps and unaudited code.'
-                  : 'Les barrières à la participation restent élevées : interfaces complexes, frais de gaz élevés, exigences KYC intrusives et distributions de tokens opaques. Les communautés méritent mieux que des feuilles de route vides et du code non audité.'}
-              </p>
-              <p className="font-semibold text-[#172033]">
-                {isEn
-                  ? 'ElyNova was created to change that narrative — one transparent block at a time.'
-                  : 'ElyNova a été créé pour changer ce récit — un bloc transparent à la fois.'}
+              <p className="font-bold text-[#172033] text-xl">
+                {isEn ? 'No promises without proof. That is our word.' : 'Pas de promesses sans preuve. Telles sont nos paroles.'}
               </p>
             </div>
           </motion.div>
@@ -149,78 +124,180 @@ export default function WhitepaperPage({ lang }: Props) {
 
         <div className="border-t border-[#E5EAF2]" />
 
-        {/* 3. The Solution */}
-        <section>
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+        {/* ── 2. What is ELY Token ── */}
+        <section id="token-utility">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
             <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-2 block">
-              {isEn ? '03 — The Solution' : '03 — La Solution'}
+              {isEn ? '02 — What is ELY' : '02 — Qu\'est-ce que ELY'}
             </span>
-            <h2 className="text-3xl font-black text-[#172033] mb-8">
-              {isEn ? 'Our Approach' : 'Notre Approche'}
+            <h2 className="text-3xl font-black text-[#172033] mb-6">
+              {isEn ? 'The ELY Token: What It Is and What It Does' : 'Le Token ELY : Ce Qu\'il Est et Ce Qu\'Il Fait'}
             </h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            <p className="text-[#475467] text-lg leading-relaxed mb-8">
+              {isEn
+                ? 'ELY is the currency of the ElyNova ecosystem. It is earned through our Telegram mini app mining bot, and it has clear, growing uses inside and outside the platform.'
+                : 'ELY est la monnaie de l\'écosystème ElyNova. Il se gagne via notre bot de minage Telegram mini-app, et il a des usages clairs et croissants à l\'intérieur comme à l\'extérieur de la plateforme.'}
+            </p>
+
+            {/* How to Earn */}
+            <h3 className="text-xl font-black text-[#172033] mb-4">
+              {isEn ? 'How You Can Earn ELY' : 'Comment Vous Gagnez de l\'ELY'}
+            </h3>
+            <div className="grid sm:grid-cols-3 gap-4 mb-10">
               {[
-                {
-                  title_en: 'Telegram Mini App Mining',
-                  title_fr: 'Minage via Mini-App Telegram',
-                  desc_en: 'No downloads required. Earn ELY directly from your Telegram account with daily cycles, missions, and referral rewards.',
-                  desc_fr: 'Pas de téléchargement requis. Gagnez des ELY directement depuis votre compte Telegram avec cycles quotidiens, missions et récompenses de parrainage.',
-                  color: '#1746D2',
-                },
-                {
-                  title_en: 'Full On-Chain Transparency',
-                  title_fr: 'Transparence Entièrement On-Chain',
-                  desc_en: 'Every transaction, every allocation, every distribution is verifiable on Solscan. What you see is what you get.',
-                  desc_fr: 'Chaque transaction, chaque allocation, chaque distribution est vérifiable sur Solscan. Ce que vous voyez est ce que vous obtenez.',
-                  color: '#D12B9A',
-                },
-                {
-                  title_en: 'Zero-KYC Participation',
-                  title_fr: 'Participation Sans KYC',
-                  desc_en: 'No personal data collection, no identity verification required. Your wallet is your only identity.',
-                  desc_fr: 'Pas de collecte de données personnelles, pas de vérification d\'identité requise. Votre portefeuille est votre seule identité.',
-                  color: '#475467',
-                },
-                {
-                  title_en: 'Community Governance',
-                  title_fr: 'Gouvernance Communautaire',
-                  desc_en: 'Future DAO structure ensures the community has a voice in major decisions affecting the ecosystem direction.',
-                  desc_fr: 'La structure DAO future garantit que la communauté a sa voix dans les décisions majeures affectant la direction de l\'écosystème.',
-                  color: '#1746D2',
-                },
+                { icon: Zap, color: '#1746D2', title_en: 'Daily Mining', title_fr: 'Minage Quotidien', desc_en: 'Run the Telegram bot daily and complete missions to earn ELY.', desc_fr: 'Utilisez le bot Telegram quotidiennement et accomplissez des missions pour gagner de l\'ELY.' },
+                { icon: Gift, color: '#D12B9A', title_en: 'Referrals', title_fr: 'Parrainages', desc_en: 'Invite friends and earn bonus ELY when they start using the app.', desc_fr: 'Invitez des amis et gagnez des bonus ELY quand ils commencent à utiliser l\'app.' },
+                { icon: Users, color: '#475467', title_en: 'Community Events', title_fr: 'Événements Communautaires', desc_en: 'Special missions, giveaways, and limited-time events with extra rewards.', desc_fr: 'Missions spéciales, récompenses et événements limités avec des bonus supplémentaires.' },
               ].map((item, i) => (
                 <div key={i} className="card-white p-6 border-l-4 hover:shadow-lg transition-all" style={{ borderColor: item.color }}>
-                  <h3 className="font-bold text-[#172033] mb-2">{isEn ? item.title_en : item.title_fr}</h3>
-                  <p className="text-sm text-[#475467] leading-relaxed">{isEn ? item.desc_en : item.desc_fr}</p>
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3`} style={{ backgroundColor: `${item.color}15` }}>
+                    <item.icon size={20} style={{ color: item.color }} />
+                  </div>
+                  <h4 className="font-bold text-[#172033] mb-1">{isEn ? item.title_en : item.title_fr}</h4>
+                  <p className="text-sm text-[#475467]">{isEn ? item.desc_en : item.desc_fr}</p>
                 </div>
               ))}
             </div>
+
+            {/* What ELY Is Used For */}
+            <h3 className="text-xl font-black text-[#172033] mb-4">
+              {isEn ? 'What Can You Do With ELY?' : 'Que Peut-on Faire Avec ELY ?'}
+            </h3>
+            <div className="space-y-3 mb-10">
+              {[
+                {
+                  icon: Wallet,
+                  color: '#1746D2',
+                  title_en: 'Withdraw to Your Own Wallet',
+                  title_fr: 'Retirer vers Votre Portefeuille',
+                  desc_en: 'From November 20, 2026, ELY can be withdrawn directly to your personal Solana wallet. Full control of your tokens.',
+                  desc_fr: 'À partir du 20 novembre 2026, l\'ELY peut être retirée directement vers votre portefeuille Solana personnel. Plein contrôle de vos tokens.',
+                },
+                {
+                  icon: Landmark,
+                  color: '#D12B9A',
+                  title_en: 'Trade on Exchanges (March 2027)',
+                  title_fr: 'Échanger sur les Marchés (Mars 2027)',
+                  desc_en: 'ELI will be listed on cryptocurrency exchanges. You will be able to trade, swap, or sell your ELY like any other token.',
+                  desc_fr: 'ELY sera listée sur les échanges de cryptomonnaies. Vous pourrez échanger, swapper ou vendre votre ELY comme n\'importe quel autre token.',
+                },
+                {
+                  icon: Coins,
+                  color: '#475467',
+                  title_en: 'Use Across the Ecosystem',
+                  title_fr: 'Utiliser dans l\'Écosystème',
+                  desc_en: 'Future uses include staking, governance voting in the DAO, NFT marketplace purchases, DeFi protocols, and more.',
+                  desc_fr: 'Les futurs usages incluent le staking, le vote de gouvernance dans la DAO, les achats sur la marketplace NFT, les protocoles DeFi, et plus encore.',
+                },
+              ].map((item, i) => (
+                <div key={i} className="card-white p-5 flex items-start gap-4 hover:shadow-md transition-all">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: `${item.color}15` }}>
+                    <item.icon size={22} style={{ color: item.color }} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#172033] text-base">{isEn ? item.title_en : item.title_fr}</h4>
+                    <p className="text-sm text-[#475467] mt-1 leading-relaxed">{isEn ? item.desc_en : item.desc_fr}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Important Note */}
+            <div className="bg-[#EFF4FF] border border-[#1746D2]/20 rounded-xl p-5">
+              <p className="text-sm text-[#1746D2] leading-relaxed">
+                {isEn
+                  ? '💡 Key fact: There are 350 million ELY tokens total. You do not need to buy them — they are earned through participation. This means fair distribution from day one.'
+                  : '💡 Faits clés : Il y a 350 millions de tokens ELY au total. Vous n\'avez pas besoin de les acheter — ils se gagnent par la participation. Cela signifie une distribution équitable dès le premier jour.'}
+              </p>
+            </div>
           </motion.div>
         </section>
 
         <div className="border-t border-[#E5EAF2]" />
 
-        {/* 4. Technology Stack */}
+        {/* ── 3. Supply & Distribution ── */}
         <section>
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-2 block">
+              {isEn ? '03 — Token Supply' : '03 — Offre en Tokens'}
+            </span>
+            <h2 className="text-3xl font-black text-[#172033] mb-6">
+              {isEn ? 'Where Every ELY Goes' : 'Vers Où Chaque ELY Va'}
+            </h2>
+            <p className="text-[#475467] text-lg leading-relaxed mb-6">
+              {isEn ? 'Transparent allocation breakdown — 100% verifiable on-chain.' : 'Répartition transparente — 100% vérifiable on-chain.'}
+            </p>
+            <div className="bg-slate-50 rounded-2xl p-6 space-y-4">
+              {[
+                { pct: '70%', label: isEn ? 'Community' : 'Communauté', detail: isEn ? 'Mining rewards, airdrops, referral bonuses — goes directly to users' : 'Récompenses de minage, airdrops, bonus de parrainage — va directement aux utilisateurs' },
+                { pct: '15%', label: isEn ? 'Liquidity & Listings' : 'Liquidité & Listings', detail: isEn ? 'Exchange listings and DEX liquidity pools — available for trading' : 'Listings échange et pools de liquidité DEX — disponible pour le trading' },
+                { pct: '10%', label: isEn ? 'Team & Development' : 'Équipe & Développement', detail: isEn ? 'Locked 12 months, then vested over 24 months — aligned incentives' : 'Bloqué 12 mois, puis libéré sur 24 mois — intérêts alignés' },
+                { pct: '5%', label: isEn ? 'Partnerships & Marketing' : 'Partenariats & Marketing', detail: isEn ? 'Growth initiatives and strategic partnerships' : 'Initiatives de croissance et partenariats stratégiques' },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-4">
+                  <div className="w-16 text-center shrink-0">
+                    <span className="text-2xl font-black text-[#1746D2]">{item.pct}</span>
+                  </div>
+                  <div className="flex-1 border-l-4 border-[#1746D2]/20 pl-4">
+                    <h4 className="font-bold text-[#172033]">{item.label}</h4>
+                    <p className="text-sm text-[#475467]">{item.detail}</p>
+                  </div>
+                </div>
+              ))}
+              <div className="pt-4 border-t border-[#E5EAF2] text-sm text-[#475467]">
+                {isEn ? 'Total supply: 350,000,000 ELY — fully verified on Solscan.' : 'Offre totale : 350 000 000 ELY — entièrement vérifié sur Solscan.'}
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
+        <div className="border-t border-[#E5EAF2]" />
+
+        {/* ── 4. Technology ── */}
+        <section>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
             <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-2 block">
               {isEn ? '04 — Technology' : '04 — Technologie'}
             </span>
-            <h2 className="text-3xl font-black text-[#172033] mb-8">
-              {isEn ? 'Built on Solana' : 'Construit sur Solana'}
+            <h2 className="text-3xl font-black text-[#172033] mb-6">
+              {isEn ? 'Simple, Fast, Secure' : 'Simple, Rapide, Sécurisé'}
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-5">
               {[
-                { name: 'Solana Blockchain', features_en: ['High throughput (~65,000 TPS)', 'Low transaction costs (<$0.01)', 'Proof of History consensus'], features_fr: ['Fort débit (~65 000 TPS)', 'Frais de transaction bas (<0,01$)', 'Consensus Proof of History'] },
-                { name: 'Smart Contracts', features_en: ['Rust-based programs', 'Auditable source code', 'Immutable deployment logic'], features_fr: ['Programmes Rust', 'Code source auditabilité', 'Logique d\'déploiement immuable'] },
-                { name: 'Telegram Integration', features_en: ['WebApp compatibility', 'In-app wallet linking', 'Push notification system'], features_fr: ['Compatibilité WebApp', 'Lien portefeuille in-app', 'Système de notifications push'] },
+                {
+                  title: 'Solana Blockchain',
+                  points_en: ['Takes seconds, not minutes', 'Costs less than $0.01 per transaction', 'Proven and battle-tested network'],
+                  points_fr: ['Prend des secondes, pas des minutes', "Coûte moins de 0,01$ par transaction", 'Réseau éprouvé et rodé'],
+                },
+                {
+                  title: 'Telegram Mini App',
+                  points_en: ['No app download needed', 'Works inside Telegram instantly', 'Wallet link via secure connection'],
+                  points_fr: ['Pas de téléchargement requis', 'Fonctionne instantanément dans Telegram', 'Lien portefeuille sécurisé'],
+                },
+                {
+                  title: 'Full Transparency',
+                  points_en: ['All transactions public on Solscan', 'Code and smart contracts open', 'Nothing hidden behind closed doors'],
+                  points_fr: ['Toutes les transactions publiques sur Solscan', 'Code et contrats intelligents ouverts', 'Rien de caché dans l\'ombre'],
+                },
               ].map((tech, i) => (
                 <div key={i} className="bg-[#172033] text-white p-6 rounded-2xl">
-                  <h3 className="font-bold text-lg mb-4">{tech.name}</h3>
+                  <h3 className="font-bold text-base mb-4">{tech.title}</h3>
                   <ul className="space-y-2 text-sm text-slate-300">
-                    {(isEn ? tech.features_en : tech.features_fr).map((f, j) => (
+                    {(isEn ? tech.points_en : tech.points_fr).map((f, j) => (
                       <li key={j} className="flex items-start gap-2">
-                        <span className="text-[#D12B9A] mt-0.5">•</span>
+                        <span className="text-[#D12B9A] mt-0.5 shrink-0">✓</span>
                         {f}
                       </li>
                     ))}
@@ -233,54 +310,25 @@ export default function WhitepaperPage({ lang }: Props) {
 
         <div className="border-t border-[#E5EAF2]" />
 
-        {/* 5. Tokenomics Summary */}
+        {/* ── 5. Roadmap ── */}
         <section>
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
             <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-2 block">
-              {isEn ? '05 — Tokenomics Summary' : '05 — Résumé Tokenomics'}
+              {isEn ? '05 — Roadmap' : '05 — Feuille de Route'}
             </span>
-            <h2 className="text-3xl font-black text-[#172033] mb-8">
-              {isEn ? 'How ELY is Distributed' : 'Comment ELY est Réparti'}
+            <h2 className="text-3xl font-black text-[#172033] mb-6">
+              {isEn ? 'Our Clear Timeline' : 'Notre Calendrier Clair'}
             </h2>
-            <div className="bg-slate-50 rounded-2xl p-8">
+            <div className="space-y-3">
               {[
-                { pct: '70%', label: isEn ? 'Community Programs' : 'Programmes Communautaires', desc: isEn ? 'Mining rewards, airdrops, referral bonuses, and other community initiatives.' : 'Récompenses de minage, airdrops, bonus de parrainage et autres initiatives communautaires.' },
-                { pct: '15%', label: isEn ? 'Liquidity Reserve' : 'Réserve de Liquidité', desc: isEn ? 'Reserved for exchange listings and DEX liquidity pools.' : 'Réservée pour les listings d\'échange et les pools de liquidité DEX.' },
-                { pct: '10%', label: isEn ? 'Team & Development' : 'Équipe & Développement', desc: isEn ? 'Locked for 12 months, then vested progressively over 24 months.' : 'Bloqué pendant 12 mois, puis libéré progressivement sur 24 mois.' },
-                { pct: '5%', label: isEn ? 'Partnerships & Marketing' : 'Partenariats & Marketing', desc: isEn ? 'Strategic partnerships, development costs, and communication expenses.' : 'Partenariats stratégiques, coûts de développement et dépenses de communication.' },
-              ].map((item, i) => (
-                <div key={i} className={`flex flex-col sm:flex-row sm:items-center gap-4 ${i < 3 ? 'border-b border-[#E5EAF2] pb-4 last:border-b-0' : ''}`}>
-                  <span className="text-3xl font-black text-[#1746D2] w-20 shrink-0">{item.pct}</span>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-[#172033]">{item.label}</h4>
-                    <p className="text-sm text-[#475467]">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-              <div className="mt-6 pt-4 border-t border-[#E5EAF2] text-sm text-[#475467]">
-                {isEn ? 'Total supply: 350,000,000 ELY. All figures publicly verifiable on Solscan.' : 'Offre totale : 350 000 000 ELY. Toutes les informations publiquement vérifiables sur Solscan.'}
-              </div>
-            </div>
-          </motion.div>
-        </section>
-
-        <div className="border-t border-[#E5EAF2]" />
-
-        {/* 6. Roadmap Highlights */}
-        <section>
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-2 block">
-              {isEn ? '06 — Roadmap' : '06 — Feuille de Route'}
-            </span>
-            <h2 className="text-3xl font-black text-[#172033] mb-8">
-              {isEn ? 'Key Milestones' : 'Jalons Clés'}
-            </h2>
-            <div className="space-y-4">
-              {[
-                { status: 'completed', date: 'Q1-Q2 2026', title_en: 'Foundation & Launch', title_fr: 'Fondation & Lancement', desc_en: 'Platform launch, token generation, bug bounty program', desc_fr: 'Lancement plateforme, génération token, programme bug bounty' },
-                { status: 'in_progress', date: 'Nov 20, 2026', title_en: 'First Withdrawals', title_fr: 'Premiers Retraits', desc_en: 'Initial withdrawal cycle to Solana wallets begins', desc_fr: 'Premier cycle de retraits vers portefeuilles Solana' },
-                { status: 'planned', date: 'Mar 2027', title_en: 'CEX Listing', title_fr: 'Listing CEX', desc_en: 'Official exchange listing with liquidity deployment', desc_fr: 'Listing officiel échange avec déploiement liquidité' },
-                { status: 'planned', date: '2027+', title_en: 'Ecosystem Expansion', title_fr: 'Expansion Écosystème', desc_en: 'NFT marketplace, DeFi integrations, DAO governance', desc_fr: 'Marketplace NFT, intégrations DeFi, gouvernance DAO' },
+                { status: 'completed', date: 'Q1–Q2 2026', title_en: 'Platform Launch', title_fr: 'Lancement de la Plateforme', desc_en: 'Website launched. Telegram mining bot active. ELY token generated on Solana. Bug bounty program live.', desc_fr: 'Site web lancé. Bot de minage Telegram actif. Token ELY généré sur Solana. Programme bug bounty en ligne.' },
+                { status: 'in_progress', date: '20 Nov 2026', title_en: 'First Withdrawals Live', title_fr: 'Premiers Retraits Actifs', desc_en: 'Users can withdraw their mined ELY to personal Solana wallets. Verification process begins.', desc_fr: 'Les utilisateurs peuvent retirer leur ELY miné vers leurs portefeuilles Solana personnels. Processus de vérification démarré.' },
+                { status: 'planned', date: 'Mars 2027', title_en: 'CEX Exchange Listing', title_fr: 'Listing sur les Échanges', desc_en: 'ELI listed on major centralized exchanges. Users can trade and cash out. Liquidity pools activated.', desc_fr: 'ELY listée sur les principaux échanges centralisés. Les utilisateurs peuvent trader et retirer. Pools de liquidité activés.' },
+                { status: 'planned', date: '2027+', title_en: 'Ecosystem Expansion', title_fr: 'Expansion de l\'Écosystème', desc_en: 'NFT marketplace launch. DeFi integrations. DAO governance powered by ELY votes. Staking rewards.', desc_fr: 'Lancement marketplace NFT. Intégrations DeFi. Gouvernance DAO pilotée par les votes ELY. Récompenses de staking.' },
               ].map((m, i) => (
                 <div key={i} className="flex items-start gap-4 card-white p-5 hover:border-[#1746D2]/30 transition-all">
                   <div className={`w-3 h-3 rounded-full mt-1.5 shrink-0 ${
@@ -294,11 +342,11 @@ export default function WhitepaperPage({ lang }: Props) {
                         m.status === 'completed' ? 'bg-emerald-100 text-emerald-700' :
                         m.status === 'in_progress' ? 'bg-blue-100 text-blue-700' : 'bg-slate-100 text-slate-600'
                       }`}>
-                        {m.status === 'completed' ? '✓' : m.status === 'in_progress' ? '◌' : '○'}
+                        {m.status === 'completed' ? '✓ Done' : m.status === 'in_progress' ? '◌ In progress' : '○ Planned'}
                       </span>
                       <h4 className="font-bold text-[#172033]">{isEn ? m.title_en : m.title_fr}</h4>
                     </div>
-                    <p className="text-sm text-[#475467]">{isEn ? m.desc_en : m.desc_fr}</p>
+                    <p className="text-sm text-[#475467] leading-relaxed">{isEn ? m.desc_en : m.desc_fr}</p>
                   </div>
                 </div>
               ))}
@@ -308,44 +356,60 @@ export default function WhitepaperPage({ lang }: Props) {
 
         <div className="border-t border-[#E5EAF2]" />
 
-        {/* 7. Our Commitment */}
+        {/* ── 6. Our Promise ── */}
         <section>
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
             <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-2 block">
-              {isEn ? '07 — Our Commitment' : '07 — Notre Engagement'}
+              {isEn ? '06 — Our Promise to You' : '06 — Notre Promesse envers Vous'}
             </span>
-            <h2 className="text-3xl font-black text-[#172033] mb-8">
-              {isEn ? 'Trust Through Transparency' : 'Confiance Par Transparence'}
+            <h2 className="text-3xl font-black text-[#172033] mb-6">
+              {isEn ? 'Why You Can Trust ElyNova' : 'Pourquoi Vous Pouvez Faire Confiance à ElyNova'}
             </h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-4">
               {[
                 {
-                  title_en: 'On-Chain Verification',
-                  title_fr: 'Vérification On-Chain',
-                  desc_en: 'Every claim we make can be verified on Solscan. No black boxes, no hidden mechanisms.',
-                  desc_fr: 'Toute affirmation que nous faisons peut être vérifiée sur Solscan. Pas de boîtes noires, pas de mécanismes cachés.',
+                  icon: ShieldCheck,
+                  color: '#1746D2',
+                  title_en: 'Verifiable Everything',
+                  title_fr: 'Tout est Vérifiable',
+                  desc_en: 'Every transaction, every balance, every event is public. Check it yourself on Solscan anytime.',
+                  desc_fr: 'Chaque transaction, chaque solde, chaque événement est public. Vérifiez vous-même sur Solscan à tout moment.',
                 },
                 {
-                  title_en: 'Clear Communication',
-                  title_fr: 'Communication Claire',
-                  desc_en: 'We communicate in plain language. No confusing jargon, no unrealistic promises.',
-                  desc_fr: 'Nous communiquons dans un langage clair. Pas de jargon incompréhensible, pas de promesses irréalistes.',
+                  icon: Users,
+                  color: '#D12B9A',
+                  title_en: 'You Come First',
+                  title_fr: 'Vous Êtes la Priorité',
+                  desc_en: '70% of all ELY goes to the community. We do not extract value from you — we create value together.',
+                  desc_fr: '70% de tout l\'ELY va à la communauté. Nous ne prélevons pas de valeur chez vous — nous créons de la valeur ensemble.',
                 },
                 {
-                  title_en: 'Community First',
-                  title_fr: 'Communauté d\'Abord',
-                  desc_en: '70% of total supply goes directly to community programs. You are not an investor — you are part of the project.',
-                  desc_fr: '70% de l\'offre totale va directement aux programmes communautaires. Vous n\'êtes pas un investisseur — vous faites partie du projet.',
-                },
+                  icon: Zap,
+                  color: '#475467',
+                  title_en: 'No Hidden Surprises',
+                  title_fr: 'Pas de Surprises Cachées',
+                  desc_en: 'Clear roadmap, honest timelines, realistic goals. No empty promises designed to hype you up.',
+                  desc_fr: 'Feuille de route claire, calendriers honnêtes, objectifs réalistes. Pas de promesses vides conçues pour vous faire monter.'},
                 {
-                  title_en: 'Responsible Growth',
-                  title_fr: 'Croissance Responsable',
-                  desc_en: 'We grow sustainably. Every milestone is achievable, every timeline is realistic.',
-                  desc_fr: 'Nous grandissons de manière durable. Chaque jalon est atteignable, chaque calendrier est réaliste.',
+                  icon: Coins,
+                  color: '#1746D2',
+                  title_en: 'Fair Access',
+                  title_fr: 'Accès Équitable',
+                  desc_en: 'No pre-sale for insiders, no VIP allocations. Everyone starts on equal footing. The first miner wins.',
+                  desc_fr: 'Pas de pré-vente pour les initiés, pas d\'allocations VIP. Tout le monde part sur un pied d\'égalité. Le premier mineur gagne.',
                 },
               ].map((item, i) => (
-                <div key={i} className="card-white p-6">
-                  <h3 className="font-bold text-[#172033] mb-2">{isEn ? item.title_en : item.title_fr}</h3>
+                <div key={i} className="card-white p-6 hover:shadow-md transition-all">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${item.color}15` }}>
+                      <item.icon size={20} style={{ color: item.color }} />
+                    </div>
+                    <h3 className="font-bold text-[#172033]">{isEn ? item.title_en : item.title_fr}</h3>
+                  </div>
                   <p className="text-sm text-[#475467] leading-relaxed">{isEn ? item.desc_en : item.desc_fr}</p>
                 </div>
               ))}
@@ -355,25 +419,95 @@ export default function WhitepaperPage({ lang }: Props) {
 
         <div className="border-t border-[#E5EAF2]" />
 
-        {/* 8. Final Words */}
+        {/* ── 7. Future Vision ── */}
         <section>
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-2 block">
+              {isEn ? '07 — The Future of ELY' : '07 — L\'Avenir d\'ELY'}
+            </span>
+            <h2 className="text-3xl font-black text-[#172033] mb-6">
+              {isEn ? 'More Than a Token' : 'Plus Qu\'un Token'}
+            </h2>
+            <p className="text-[#475467] text-lg leading-relaxed mb-6">
+              {isEn
+                ? 'The vision for ELY goes far beyond simple mining. Here is what we are building toward:'
+                : 'La vision pour ELY va bien au-delà du simple minage. Voici ce que nous construisons :'}
+            </p>
+            <div className="space-y-4">
+              {[
+                {
+                  step: '01',
+                  title_en: 'ELI Governance (DAO)',
+                  title_fr: 'Gouvernance ELY (DAO)',
+                  desc_en: 'Every ELY holder gets a voice. Vote on project direction, feature priorities, and treasury spending. Your token equals your influence.',
+                  desc_fr: 'Chaque détenteur d\'ELY a sa voix. Votez sur la direction du projet, les priorités des fonctionnalités et les dépenses du trésor. Votre token égale votre influence.',
+                },
+                {
+                  step: '02',
+                  title_en: 'ELI Staking Rewards',
+                  title_fr: 'Récompenses de Staking ELY',
+                  desc_en: 'Lock your ELY to earn passive income. Stakers help secure the network and are rewarded proportionally for their commitment.',
+                  desc_fr: 'Bloquez votre ELY pour gagner un revenu passif. Les stakers aident à sécuriser le réseau et sont récompensés proportionnellement à leur engagement.',
+                },
+                {
+                  step: '03',
+                  title_en: 'ELI Marketplace',
+                  title_fr: 'Marketplace ELY',
+                  desc_en: 'A dedicated ElyNova NFT marketplace where ELY is the only accepted currency. Exclusive drops, creator tools, and community collections.',
+                  desc_fr: 'Une marketplace NFT dédiée ElyNova où ELY est la seule devise acceptée. Drops exclusifs, outils créateurs et collections communautaires.',
+                },
+                {
+                  step: '04',
+                  title_en: 'ElyNova DeFi Suite',
+                  title_fr: 'Suite DeFi ElyNova',
+                  desc_en: 'Future lending and borrowing products, yield optimization strategies, and cross-chain bridges — all powered by ELY.',
+                  desc_fr: 'Produits de prêt et d\'emprunt futurs, stratégies d\'optimisation de rendement et ponts inter-chaînes — le tout propulsé par ELY.',
+                },
+              ].map((item, i) => (
+                <div key={i} className="card-white p-5 flex items-start gap-5 hover:shadow-md transition-all">
+                  <span className="text-4xl font-black text-[#1746D2]/15 shrink-0">{item.step}</span>
+                  <div>
+                    <h4 className="font-bold text-[#172033] mb-1">{isEn ? item.title_en : item.title_fr}</h4>
+                    <p className="text-sm text-[#475467] leading-relaxed">{isEn ? item.desc_en : item.desc_fr}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </section>
+
+        <div className="border-t border-[#E5EAF2]" />
+
+        {/* ── 8. Final Words ── */}
+        <section>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
             <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-2 block">
               {isEn ? '08 — Final Words' : '08 — Dernières Paroles'}
             </span>
             <h2 className="text-3xl font-black text-[#172033] mb-6">
-              {isEn ? 'Join Us on This Journey' : 'Rejoignez-Nous dans Cette Aventure'}
+              {isEn ? 'We Are Building This Together' : 'Nous Construisons Cela Ensemble'}
             </h2>
-            <div className="prose prose-lg text-[#475467] leading-relaxed space-y-4">
+            <div className="space-y-4 text-[#475467] text-lg leading-relaxed">
               <p>
                 {isEn
-                  ? 'ElyNova is more than a token — it is a movement toward honest, accessible blockchain participation. We are building something real, something verifiable, something that puts the community first.'
-                  : 'ElyNova est plus qu\'un token — c\'est un mouvement vers une participation blockchain honnête et accessible. Nous construisons quelque chose de réel, de vérifiable, qui place la communauté en priorité.'}
+                  ? 'There is nothing to prove because everything is already proven — on the blockchain. Every ELY you earn, every transaction made, every milestone reached is visible to everyone.'
+                  : 'Il n\'y a rien à prouver parce que tout est déjà prouvé — sur la blockchain. Chaque ELY que vous gagnez, chaque transaction effectuée, chaque jalon atteint est visible par tous.'}
               </p>
               <p>
                 {isEn
-                  ? 'If you value transparency over hype, clarity over complexity, and community over speculation — you have found your home. Welcome to ElyNova.'
-                  : 'Si vous valorisez la transparence plutôt que le battage, la clarté plutôt que la complexité, et la communauté plutôt que la spéculation — vous avez trouvé votre chez-vous. Bienvenue chez ElyNova.'}
+                  ? 'If you are tired of projects that talk big but deliver little, ElyNova is your chance to see what happens when a team prioritizes transparency over hype.'
+                  : 'Si vous en avez marre des projets qui parlent gros mais livrent peu, ElyNova est votre chance de voir ce qui se passe quand une équipe priorise la transparence plutôt que le battage.'}
+              </p>
+              <p className="font-bold text-[#172033] text-xl">
+                {isEn ? 'Your journey with ELY starts with a single click on Telegram. Nothing more.' : 'Votre parcours avec ELY commence par un seul clic sur Telegram. Rien de plus.'}
               </p>
             </div>
           </motion.div>
@@ -383,26 +517,28 @@ export default function WhitepaperPage({ lang }: Props) {
       {/* ── CTA Footer ── */}
       <section className="py-20 px-6 bg-gradient-to-r from-[#1746D2] to-[#D12B9A] text-white">
         <div className="max-w-3xl mx-auto text-center">
+          <Rocket size={40} className="mx-auto mb-6 opacity-90" />
           <h2 className="text-3xl font-black mb-6">
-            {isEn ? 'Ready to Participate?' : 'Prêt à Participer ?'}
+            {isEn ? 'Start Mining ELY Today' : 'Commencez à Miner de l\'ELY Aujourd\'hui'}
           </h2>
-          <p className="text-lg opacity-85 mb-10">
+          <p className="text-lg opacity-85 mb-10 max-w-xl mx-auto">
             {isEn
-              ? 'Start mining ELY tokens right now through our Telegram mini app. No downloads, no complex setup.'
-              : 'Commencez à miner des tokens ELY dès maintenant via notre mini-app Telegram. Pas de téléchargement, pas de configuration complexe.'}
+              ? 'Open Telegram, find the ElyNova bot, connect your wallet, and start earning. Free to join. No deposits required.'
+              : 'Ouvrez Telegram, trouvez le bot ElyNova, connectez votre portefeuille et commencez à gagner. Gratuit à rejoindre. Aucun dépôt requis.'}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="https://t.me/ElyNova_bot?start=ref_6628765249"
               target="_blank"
               rel="noreferrer"
-              className="bg-white text-[#1746D2] px-8 py-4 rounded-xl font-bold hover:bg-slate-100 transition-colors flex items-center gap-2"
+              className="bg-white text-[#1746D2] px-8 py-4 rounded-xl font-bold hover:bg-slate-100 transition-colors flex items-center gap-2 text-lg"
             >
               <Zap size={20} />
-              {isEn ? 'Start Mining Now' : 'Commencer à Miner'}
+              {isEn ? 'Start Now — It\'s Free' : 'Commencer — C\'est Gratuit'}
             </a>
-            <Link to="/contact" className="border-2 border-white/50 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-colors">
-              {isEn ? 'Contact Support' : 'Contacter le Support'}
+            <Link to="/contact" className="border-2 border-white/50 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-colors flex items-center gap-2">
+              <ShieldCheck size={20} />
+              {isEn ? 'Contact Us' : 'Contactez-nous'}
             </Link>
           </div>
         </div>
