@@ -149,14 +149,14 @@ export default function Home({ lang }: Props) {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#EFF4FF] text-[#1746D2] rounded-full text-sm font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#EFF4FF] dark:bg-[#0f1d32] text-[#1746D2] rounded-full text-sm font-semibold mb-6 border border-[#1746D2]/20">
               <span className="w-2 h-2 bg-[#1746D2] rounded-full animate-pulse" />
-              {isEn ? 'Early Access' : 'Accès Précoces'}
+              {isEn ? 'Solana · Telegram Mining' : 'Solana · Minage Telegram'}
             </div>
 
             <h1 className="text-5xl md:text-7xl font-black text-[#172033] leading-[1.1] mb-6">
               <span className="text-[#1746D2] block text-2xl uppercase tracking-widest mb-4">{ct.tagline}</span>
-              {isEn ? <>Mine <span className="gradient-text">ELY</span>, The Future is <span className="gradient-text">Today</span></> : <>Minez <span className="gradient-text">ELY</span>, L'Avenir est <span className="gradient-text">Maintenant</span></>}
+              {isEn ? <>The Future of<br /><span className="gradient-text">Crypto Mining</span><br />Is Here</> : <>Le Futur du<br /><span className="gradient-text">Minage Crypto</span><br />Est Là</>}
             </h1>
 
             <p className="text-lg text-[#475467] max-w-xl mb-8 leading-relaxed">{ct.hero_subtitle}</p>

@@ -19,8 +19,7 @@ const SEGMENTS_FR = [
   { name: 'Partenariats, Dév & Marketing', value: 5, color: '#94a3b8', count: '17 500 000' },
 ];
 
-const TOKEN_SYMBOLS = ['ELY', 'EL Y'] as const;
-type TokenSymbol = typeof TOKEN_SYMBOLS[number];
+type TokenSymbol = 'ELY';
 
 export default function TokenomicsPage({ lang }: Props) {
   const data = lang === 'en' ? SEGMENTS_EN : SEGMENTS_FR;

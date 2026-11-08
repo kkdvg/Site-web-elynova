@@ -17,7 +17,7 @@ export const translations = {
       openApp: 'Open ElyNova'
     },
     hero: {
-      tag: 'Early Access',
+      tag: 'Solana · Telegram Mining',
       title: 'BUILD. PARTICIPATE. GROW.',
       subtitle: 'The official institutional portal of the ElyNova ecosystem on Solana.',
       cta1: 'Explore the Ecosystem',
@@ -58,7 +58,7 @@ export const translations = {
       openApp: 'Ouvrir ElyNova'
     },
     hero: {
-      tag: 'Accès Précoces',
+      tag: 'Solana · Minage Telegram',
       title: 'BUILD. PARTICIPATE. GROW.',
       subtitle: 'Le portail institutionnel officiel de l’écosystème ElyNova sur Solana.',
       cta1: 'Explorer l’écosystème',
