@@ -55,10 +55,10 @@ export default function Home({ lang }: Props) {
     roadmap_title: 'Roadmap Highlights',
     road_complete: 'Foundation & Launch',
     road_complete_items: ['Community platform launch', 'Official ELY token generation'],
-    road_in_progress: 'Growth Phase',
-    road_in_progress_items: ['Staking features in progress', 'Partnership development', 'Liquidity deployment'],
-    road_planned: 'Expansion Phase',
-    road_planned_items: ['CEX listings (announced)', 'Multi-chain exploration', 'Governance implementation'],
+    road_in_progress: 'Withdrawal Phase',
+    road_in_progress_items: ['First withdrawal cycle to Solana wallets (Nov 20, 2026)', 'KYC-free verification process', 'Wallet linkage verification'],
+    road_planned: 'Market Listing & Growth',
+    road_planned_items: ['Official exchange listing (March 2027)', 'Liquidity pool initialization', 'NFT marketplace & DeFi integrations (2027+)'],
     cta_title: 'Ready to Start?',
     cta_subtitle: 'Join the ElyNova community today and participate in the future of Web3.',
     join_button: 'Open ElyNova',
@@ -111,10 +111,10 @@ export default function Home({ lang }: Props) {
     roadmap_title: 'Jalons de la Feuille de Route',
     road_complete: 'Fondation & Lancement',
     road_complete_items: ['Lancement de la plateforme communautaire', 'Génération officielle du token ELY'],
-    road_in_progress: 'Phase de Croissance',
-    road_in_progress_items: ['Fonctionnalités staking en cours', 'Développement partenariats', 'Déploiement liquidité'],
-    road_planned: 'Phase d\'Expansion',
-    road_planned_items: ['Listings CEX (annoncés)', 'Exploration multi-chaîne', 'Implémentation gouvernance'],
+    road_in_progress: 'Phase de Retrait',
+    road_in_progress_items: ['Premier cycle de retraits vers portefeuilles Solana (20 Nov 2026)', 'Processus de vérification sans KYC', 'Vérification du lien portefeuille'],
+    road_planned: 'Listing Marché & Croissance',
+    road_planned_items: ['Listing officiel sur échange (Mars 2027)', 'Initialisation des pools de liquidité', 'Marketplace NFT & intégrations DeFi (2027+)'],
     cta_title: 'Prêt à Commencer ?',
     cta_subtitle: 'Rejoignez la communauté ElyNova aujourd\'hui et participez à l\'avenir du Web3.',
     join_button: 'Ouvrir ElyNova',
@@ -286,6 +286,50 @@ export default function Home({ lang }: Props) {
               {isEn ? 'View Full Roadmap' : 'Voir la Feuille de Route Complète'} <ArrowRight size={18} />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Privacy Policy */}
+      <section className="py-20 px-6 bg-slate-50 border-y border-[#E5EAF2]">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-black text-[#172033] mb-8 text-center">{isEn ? 'Privacy Policy' : 'Politique de Confidentialité'}</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                title_en: 'What We Collect',
+                title_fr: 'Ce que Nous Collectons',
+                desc_en: 'We do not collect personal data. You can use our platform anonymously. No accounts, no KYC, no tracking.',
+                desc_fr: 'Nous ne collectons aucune donnée personnelle. Vous pouvez utiliser notre plateforme en toute anonymat. Pas de compte, pas de KYC, aucun suivi.',
+              },
+              {
+                title_en: 'Blockchain Transparency',
+                title_fr: 'Transparence Blockchain',
+                desc_en: 'All transactions are public on Solana blockchain. Your wallet address is visible but never linked to your identity.',
+                desc_fr: 'Toutes les transactions sont publiques sur la blockchain Solana. Votre adresse wallet est visible mais jamais liée à votre identité.',
+              },
+              {
+                title_en: 'Your Rights',
+                title_fr: 'Vos Droits',
+                desc_en: 'You control your data. We never sell or share information with third parties. Contact us anytime for any question.',
+                desc_fr: 'Vous contrôlez vos données. Nous ne vendons ni ne partageons d\'informations avec des tiers. Contactez-nous à tout moment.',
+              },
+              {
+                title_en: 'Cookie Usage',
+                title_fr: 'Utilisation des Cookies',
+                desc_en: 'This website uses only essential cookies to function properly. No tracking cookies, no advertising cookies.',
+                desc_fr: 'Ce site utilise uniquement des cookies essentiels au bon fonctionnement. Aucun cookie de suivi, aucun cookie publicitaire.',
+              },
+            ].map((item, i) => (
+              <div key={i} className="card-white p-6 hover:border-[#1746D2]/30 hover:shadow-lg transition-all">
+                <h3 className="font-bold text-[#1746D2] mb-3">{isEn ? item.title_en : item.title_fr}</h3>
+                <p className="text-[#475467] leading-relaxed">{isEn ? item.desc_en : item.desc_fr}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-sm text-[#475467] mt-8">
+            {isEn ? 'For questions, email:' : 'Pour toute question, écrivez à :'}{' '}
+            <a href="mailto:jokalou51@gmail.com" className="text-[#1746D2] font-semibold hover:underline">jokalou51@gmail.com</a>
+          </p>
         </div>
       </section>
 

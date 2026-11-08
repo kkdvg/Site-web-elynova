@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import EcosystemPage from './pages/Ecosystem';
@@ -14,6 +15,7 @@ import SecurityPage from './pages/Security';
 import NewsPage from './pages/News';
 import FAQPage from './pages/Faq';
 import ContactPage from './pages/Contact';
+import WhitepaperPage from './pages/Whitepaper';
 
 export default function App() {
   const [lang, setLang] = useState<'en' | 'fr'>(() => {
@@ -31,6 +33,7 @@ export default function App() {
     <Router>
       <div className="min-h-screen bg-white text-[#172033] flex flex-col">
         <Navbar lang={lang} toggleLang={toggleLang} />
+        <ScrollToTop />
         <main className="flex-grow pt-20">
           <Routes>
             <Route path="/" element={<Home lang={lang} />} />
@@ -45,6 +48,7 @@ export default function App() {
             <Route path="/news" element={<NewsPage lang={lang} />} />
             <Route path="/faq" element={<FAQPage lang={lang} />} />
             <Route path="/contact" element={<ContactPage lang={lang} />} />
+            <Route path="/whitepaper" element={<WhitepaperPage lang={lang} />} />
           </Routes>
         </main>
         <Footer lang={lang} />

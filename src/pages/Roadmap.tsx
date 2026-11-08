@@ -1,20 +1,20 @@
 import { motion } from 'framer-motion';
-import { Rocket, TrendingUp, Globe, Zap } from 'lucide-react';
+import { Rocket, TrendingUp, Wallet, BarChart3, Zap } from 'lucide-react';
 
 interface Props { lang: 'en' | 'fr'; }
 
 const PHASES_EN = [
   { phase: 'Q1-Q2 2026', title: 'Foundation & Launch', status: 'completed', icon: Rocket, items: ['Community platform launch', 'Official ELY token generation on Solana', 'Bug bounty program launched'] },
-  { phase: 'Q2-Q3 2026', title: 'Growth Phase', status: 'in_progress', icon: TrendingUp, items: ['Referral program activated', 'First community airdrop distributed', 'Strategic partnerships initiated', 'Staking features in development'] },
-  { phase: 'Q3-Q4 2026', title: 'Expansion', status: 'planned', icon: Globe, items: ['Multi-chain deployment exploration', 'Mobile wallet integration', 'DEX listing application', 'Governance voting system implementation'] },
-  { phase: '2027+', title: 'Ecosystem Growth', status: 'planned', icon: Zap, items: ['CEX listings (announced candidates)', 'NFT marketplace launch', 'DeFi protocol integrations', 'ElyNova DAO governance activation'] },
+  { phase: 'Nov 20, 2026', title: 'Withdrawal Phase', status: 'in_progress', icon: Wallet, items: ['First withdrawal cycle to Solana wallets', 'KYC-free verification process', 'Wallet linkage verification'] },
+  { phase: 'Q1 2027', title: 'Market Listing', status: 'planned', icon: BarChart3, items: ['Official exchange listing (March 2027)', 'Liquidity pool initialization', 'Trading pairs activation'] },
+  { phase: '2027+', title: 'Ecosystem Growth', status: 'planned', icon: Zap, items: ['NFT marketplace launch', 'DeFi protocol integrations', 'ElyNova DAO governance activation'] },
 ];
 
 const PHASES_FR = [
   { phase: 'T1-T2 2026', title: 'Fondation & Lancement', status: 'completed', icon: Rocket, items: ['Lancement de la plateforme communautaire', 'Génération officielle du token ELY sur Solana', 'Programme bug bounty lancé'] },
-  { phase: 'T2-T3 2026', title: 'Phase de Croissance', status: 'in_progress', icon: TrendingUp, items: ['Programme de parrainage activé', 'Premier airdrop communautaire distribué', 'Partenariats stratégiques initiés', 'Fonctionnalités staking en développement'] },
-  { phase: 'T3-T4 2026', title: 'Expansion', status: 'planned', icon: Globe, items: ['Exploration déploiement multi-chaîne', 'Intégration wallet mobile', 'Candidature listing DEX', 'Implémentation système de vote gouvernance'] },
-  { phase: '2027+', title: 'Croissance Écosystème', status: 'planned', icon: Zap, items: ['Listings CEX (candidats annoncés)', 'Lancement marketplace NFT', 'Intégrations protocoles DeFi', 'Activation DAO ElyNova'] },
+  { phase: '20 Nov 2026', title: 'Phase de Retrait', status: 'in_progress', icon: Wallet, items: ['Premier cycle de retraits vers portefeuilles Solana', 'Processus de vérification sans KYC', 'Vérification du lien portefeuille'] },
+  { phase: 'T1 2027', title: 'Listing Marché', status: 'planned', icon: BarChart3, items: ['Listing officiel sur échange (Mars 2027)', 'Initialisation des pools de liquidité', 'Activation des paires de trading'] },
+  { phase: '2027+', title: 'Croissance Écosystème', status: 'planned', icon: Zap, items: ['Lancement marketplace NFT', 'Intégrations protocoles DeFi', 'Activation DAO ElyNova'] },
 ];
 
 export default function RoadmapPage({ lang }: Props) {
@@ -29,8 +29,8 @@ export default function RoadmapPage({ lang }: Props) {
         </h1>
         <p className="text-lg text-[#475467]">
           {isEn
-            ? 'Our journey so far and our planned milestones. Completed phases have been verified internally.'
-            : 'Notre parcours accompli et nos jalons planifiés. Les phases terminées ont été vérifiées internement.'}
+            ? 'Key milestones for the ElyNova ecosystem development and growth.'
+            : 'Jalons clés pour le développement et la croissance de l\'écosystème ElyNova.'}
         </p>
       </div>
 

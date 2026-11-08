@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface Props { lang: 'en' | 'fr'; }
@@ -54,9 +54,13 @@ export default function About({ lang }: Props) {
         ))}
       </div>
 
-      {/* Risk Notice */}
-      <div className="text-center">
-        <p className="text-sm text-slate-500 bg-slate-50 inline-block px-6 py-4 rounded-xl">{t.risk_notice}</p>
+      {/* Contact */}
+      <div className="text-center py-12 border-t border-[#E5EAF2] mt-8">
+        <h2 className="text-2xl font-black text-[#172033] mb-4">{lang === 'en' ? 'Contact Us' : 'Contactez-nous'}</h2>
+        <p className="text-[#475467] mb-4">{lang === 'en' ? 'Have questions or want to learn more? Reach out to us.' : 'Des questions ou souhaitez en savoir plus ? Contactez-nous.'}</p>
+        <a href="mailto:jokalou51@gmail.com" className="inline-flex items-center gap-2 text-[#1746D2] font-bold text-lg hover:text-[#D12B9A] transition-colors">
+          <Mail size={20} /> jokalou51@gmail.com
+        </a>
       </div>
     </div>
   );
