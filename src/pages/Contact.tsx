@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Send, CheckCircle2, AlertCircle, Youtube } from 'lucide-react';
+import { Mail, Send, CheckCircle2, AlertCircle, Youtube, Bot } from 'lucide-react';
 
 interface Props { lang: 'en' | 'fr'; }
 
@@ -30,18 +30,18 @@ export default function ContactPage({ lang }: Props) {
     success_title: 'Message Sent!',
     success_desc: 'Thank you for reaching out. We will respond within 24-48 business hours.',
     channels_title: 'Official Channels',
-    telegram: 'Chat with us on Telegram',
-    telegram_url: 'https://t.me/elynova_official',
+    bot_title: 'Telegram Mini App',
+    bot_desc: 'Start earning ELY tokens daily — open the mini app, connect your wallet and mine.',
+    bot_url: 'https://t.me/ElyNova_bot?start=ref_6628765249',
+    channel_title: 'Official Channel',
+    channel_desc: 'Get project updates, announcements and join the community.',
+    channel_url: 'https://t.me/elynova_official',
     youtube: 'YouTube Official Channel',
     youtube_url: 'https://www.youtube.com/@Elynova_official',
     email_support: 'Support Email',
     email_addr: 'jokalou51@gmail.com',
     spam_note: 'This form uses basic anti-spam protection. Please do not share private keys, seed phrases, or sensitive credentials.',
-    telegram_sub: 'Message us anytime · @elynova_official',
-    youtube_sub: 'Watch our videos · @Elynova_official',
-    email_sub: 'Direct support · Response within 24h',
-    urgent_text: 'For urgent matters, message us directly on Telegram or write to jokalou51@gmail.com. Our team responds quickly.',
-    urgent_highlight: '💬 You can also message us directly on Telegram — we respond fast!',
+    telegram_warning: '⚠️ Never trust anyone asking for your wallet seed phrase or private key.',
   } : {
     title: 'Nous Contacter',
     subtitle: 'Des questions ou propositions ? Contactez-nous via nos canaux officiels ci-dessous.',
@@ -53,18 +53,18 @@ export default function ContactPage({ lang }: Props) {
     success_title: 'Message Envoyé !',
     success_desc: 'Merci de nous avoir contactés. Nous répondrons sous 24-48 heures ouvrables.',
     channels_title: 'Canaux Officiels',
-    telegram: 'Discutez-nous sur Telegram',
-    telegram_url: 'https://t.me/elynova_official',
+    bot_title: 'Mini App Telegram',
+    bot_desc: 'Commencez à gagner des jetons ELY chaque jour — ouvrez la mini-app, connectez votre portefeuille et minez.',
+    bot_url: 'https://t.me/ElyNova_bot?start=ref_6628765249',
+    channel_title: 'Canal Officiel',
+    channel_desc: 'Recevez les mises à jour du projet, annonces et rejoignez la communauté.',
+    channel_url: 'https://t.me/elynova_official',
     youtube: 'Chaîne YouTube Officielle',
     youtube_url: 'https://www.youtube.com/@Elynova_official',
     email_support: 'Email de Support',
     email_addr: 'jokalou51@gmail.com',
     spam_note: 'Ce formulaire utilise une protection anti-spam basique. Ne partagez pas vos clés privées, phrases semences ou identifiants sensibles.',
-    telegram_sub: 'Messagez-nous à tout moment · @elynova_official',
-    youtube_sub: 'Regardez nos vidéos · @Elynova_official',
-    email_sub: 'Support direct · Réponse sous 24h',
-    urgent_text: 'Pour les urgences, envoyez-nous un message directement sur Telegram ou écrivez à jokalou51@gmail.com. Notre équipe répond rapidement.',
-    urgent_highlight: '💬 Vous pouvez aussi nous envoyer un message directement sur Telegram — nous répondons rapidement !',
+    telegram_warning: '⚠️ Ne faites jamais confiance à quiconque vous demande votre phrase semence ou clé privée.',
   };
 
   return (
@@ -153,17 +153,30 @@ export default function ContactPage({ lang }: Props) {
           <div className="card-white p-6">
             <h3 className="font-bold text-[#172033] mb-6">{t.channels_title}</h3>
             <div className="space-y-4">
-              {/* Telegram */}
-              <a href={t.telegram_url} target="_blank" rel="noreferrer"
+              {/* Mining Bot */}
+              <a href={t.bot_url} target="_blank" rel="noreferrer"
                 className="group flex items-center gap-4 p-4 rounded-2xl border border-blue-200 bg-blue-50 hover:bg-blue-100 hover:border-blue-300 transition-all cursor-pointer">
                 <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform shrink-0">
-                  <Send className="w-6 h-6 text-[#24A1DE]" />
+                  <Bot className="w-6 h-6 text-[#24A1DE]" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="block font-semibold text-[#172033]">{t.telegram}</span>
-                  <span className="text-sm text-[#475467]">{t.telegram_sub}</span>
+                  <span className="block font-semibold text-[#172033]">{t.bot_title}</span>
+                  <span className="text-sm text-[#475467]">{t.bot_desc}</span>
                 </div>
                 <span className="text-[#24A1DE] opacity-0 group-hover:opacity-100 transition-opacity text-lg">→</span>
+              </a>
+
+              {/* Official Channel */}
+              <a href={t.channel_url} target="_blank" rel="noreferrer"
+                className="group flex items-center gap-4 p-4 rounded-2xl border border-teal-200 bg-teal-50 hover:bg-teal-100 hover:border-teal-300 transition-all cursor-pointer">
+                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform shrink-0">
+                  <Send className="w-6 h-6 text-[#1ABCF9]" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <span className="block font-semibold text-[#172033]">{t.channel_title}</span>
+                  <span className="text-sm text-[#475467]">@elynova_official — {isEn ? 'Announcements & community' : 'Annonces et communauté'}</span>
+                </div>
+                <span className="text-[#1ABCF9] opacity-0 group-hover:opacity-100 transition-opacity text-lg">→</span>
               </a>
 
               {/* YouTube */}
@@ -174,7 +187,7 @@ export default function ContactPage({ lang }: Props) {
                 </div>
                 <div className="flex-1 min-w-0">
                   <span className="block font-semibold text-[#172033]">{t.youtube}</span>
-                  <span className="text-sm text-[#475467]">{t.youtube_sub}</span>
+                  <span className="text-sm text-[#475467]">@Elynova_official — {isEn ? 'Watch our videos' : 'Regardez nos vidéos'}</span>
                 </div>
                 <span className="text-[#FF0000] opacity-0 group-hover:opacity-100 transition-opacity text-lg">→</span>
               </a>
@@ -187,7 +200,7 @@ export default function ContactPage({ lang }: Props) {
                 </div>
                 <div className="flex-1 min-w-0">
                   <span className="block font-semibold text-[#172033]">{t.email_support}</span>
-                  <span className="text-sm text-[#475467]">{t.email_sub}</span>
+                  <span className="text-sm text-[#475467]">{isEn ? 'Direct support · Response within 24h' : 'Support direct · Réponse sous 24h'}</span>
                   <span className="text-xs text-[#D12B9A] font-medium">{t.email_addr}</span>
                 </div>
                 <span className="text-[#D12B9A] opacity-0 group-hover:opacity-100 transition-opacity text-lg">→</span>
@@ -197,9 +210,11 @@ export default function ContactPage({ lang }: Props) {
 
           <div className="bg-[#EFF4FF]/50 rounded-2xl p-6">
             <p className="text-sm text-[#475467]">
-              {t.urgent_text}
+              {isEn
+                ? 'For urgent matters, message us directly on Telegram or write to jokalou51@gmail.com. Our team responds quickly.'
+                : 'Pour les urgences, écrivez directement à jokalou51@gmail.com ou contactez-nous sur Telegram.'}
               <br />
-              <span className="font-semibold text-[#24A1DE]">{t.urgent_highlight}</span>
+              <span className="font-semibold text-red-500">{t.telegram_warning}</span>
             </p>
           </div>
         </div>
