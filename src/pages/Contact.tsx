@@ -30,13 +30,18 @@ export default function ContactPage({ lang }: Props) {
     success_title: 'Message Sent!',
     success_desc: 'Thank you for reaching out. We will respond within 24-48 business hours.',
     channels_title: 'Official Channels',
-    telegram: 'Telegram Official Channel',
+    telegram: 'Chat with us on Telegram',
     telegram_url: 'https://t.me/elynova_official',
     youtube: 'YouTube Official Channel',
     youtube_url: 'https://www.youtube.com/@Elynova_official',
     email_support: 'Support Email',
     email_addr: 'jokalou51@gmail.com',
     spam_note: 'This form uses basic anti-spam protection. Please do not share private keys, seed phrases, or sensitive credentials.',
+    telegram_sub: 'Message us anytime · @elynova_official',
+    youtube_sub: 'Watch our videos · @Elynova_official',
+    email_sub: 'Direct support · Response within 24h',
+    urgent_text: 'For urgent matters, message us directly on Telegram or write to jokalou51@gmail.com. Our team responds quickly.',
+    urgent_highlight: '💬 You can also message us directly on Telegram — we respond fast!',
   } : {
     title: 'Nous Contacter',
     subtitle: 'Des questions ou propositions ? Contactez-nous via nos canaux officiels ci-dessous.',
@@ -48,13 +53,18 @@ export default function ContactPage({ lang }: Props) {
     success_title: 'Message Envoyé !',
     success_desc: 'Merci de nous avoir contactés. Nous répondrons sous 24-48 heures ouvrables.',
     channels_title: 'Canaux Officiels',
-    telegram: 'Canal Telegram Officiel',
+    telegram: 'Discutez-nous sur Telegram',
     telegram_url: 'https://t.me/elynova_official',
     youtube: 'Chaîne YouTube Officielle',
     youtube_url: 'https://www.youtube.com/@Elynova_official',
     email_support: 'Email de Support',
     email_addr: 'jokalou51@gmail.com',
     spam_note: 'Ce formulaire utilise une protection anti-spam basique. Ne partagez pas vos clés privées, phrases semences ou identifiants sensibles.',
+    telegram_sub: 'Messagez-nous à tout moment · @elynova_official',
+    youtube_sub: 'Regardez nos vidéos · @Elynova_official',
+    email_sub: 'Support direct · Réponse sous 24h',
+    urgent_text: 'Pour les urgences, envoyez-nous un message directement sur Telegram ou écrivez à jokalou51@gmail.com. Notre équipe répond rapidement.',
+    urgent_highlight: '💬 Vous pouvez aussi nous envoyer un message directement sur Telegram — nous répondons rapidement !',
   };
 
   return (
@@ -142,38 +152,54 @@ export default function ContactPage({ lang }: Props) {
         <div className="space-y-6">
           <div className="card-white p-6">
             <h3 className="font-bold text-[#172033] mb-6">{t.channels_title}</h3>
-            <div className="space-y-5">
-              <a href={t.telegram_url} target="_blank" rel="noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 hover:bg-blue-500/10 hover:text-blue-600 transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-sm">
-                  <Send className="w-5 h-5 text-[#24A1DE]" />
+            <div className="space-y-4">
+              {/* Telegram */}
+              <a href={t.telegram_url} target="_blank" rel="noreferrer"
+                className="group flex items-center gap-4 p-4 rounded-2xl border border-blue-200 bg-blue-50 hover:bg-blue-100 hover:border-blue-300 transition-all cursor-pointer">
+                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform shrink-0">
+                  <Send className="w-6 h-6 text-[#24A1DE]" />
                 </div>
-                <span className="font-medium text-[#172033] text-sm">{t.telegram}</span>
+                <div className="flex-1 min-w-0">
+                  <span className="block font-semibold text-[#172033]">{t.telegram}</span>
+                  <span className="text-sm text-[#475467]">{t.telegram_sub}</span>
+                </div>
+                <span className="text-[#24A1DE] opacity-0 group-hover:opacity-100 transition-opacity text-lg">→</span>
               </a>
 
-              <a href={t.youtube_url} target="_blank" rel="noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 hover:bg-red-500/10 hover:text-red-600 transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-sm">
-                  <Youtube className="w-5 h-5 text-[#FF0000]" />
+              {/* YouTube */}
+              <a href={t.youtube_url} target="_blank" rel="noreferrer"
+                className="group flex items-center gap-4 p-4 rounded-2xl border border-red-200 bg-red-50 hover:bg-red-100 hover:border-red-300 transition-all cursor-pointer">
+                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform shrink-0">
+                  <Youtube className="w-6 h-6 text-[#FF0000]" />
                 </div>
-                <span className="font-medium text-[#172033] text-sm">{t.youtube}</span>
+                <div className="flex-1 min-w-0">
+                  <span className="block font-semibold text-[#172033]">{t.youtube}</span>
+                  <span className="text-sm text-[#475467]">{t.youtube_sub}</span>
+                </div>
+                <span className="text-[#FF0000] opacity-0 group-hover:opacity-100 transition-opacity text-lg">→</span>
               </a>
 
-              <a href={`mailto:${t.email_addr}`} className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 hover:bg-pink-500/10 hover:text-[#D12B9A] transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-sm">
-                  <Mail className="w-5 h-5 text-[#1746D2]" />
+              {/* Email */}
+              <a href={`mailto:${t.email_addr}`}
+                className="group flex items-center gap-4 p-4 rounded-2xl border border-pink-200 bg-pink-50 hover:bg-pink-100 hover:border-pink-300 transition-all cursor-pointer">
+                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform shrink-0">
+                  <Mail className="w-6 h-6 text-[#D12B9A]" />
                 </div>
-                <div>
-                  <span className="block font-medium text-[#172033] text-sm">{t.email_support}</span>
-                  <span className="text-xs text-[#1746D2]">{t.email_addr}</span>
+                <div className="flex-1 min-w-0">
+                  <span className="block font-semibold text-[#172033]">{t.email_support}</span>
+                  <span className="text-sm text-[#475467]">{t.email_sub}</span>
+                  <span className="text-xs text-[#D12B9A] font-medium">{t.email_addr}</span>
                 </div>
+                <span className="text-[#D12B9A] opacity-0 group-hover:opacity-100 transition-opacity text-lg">→</span>
               </a>
             </div>
           </div>
 
           <div className="bg-[#EFF4FF]/50 rounded-2xl p-6">
             <p className="text-sm text-[#475467]">
-              {isEn
-                ? 'For urgent matters, join our Telegram channel or write directly to jokalou51@gmail.com.'
-                : 'Pour les urgences, rejoignez notre canal Telegram ou écrivez directement à jokalou51@gmail.com.'}
+              {t.urgent_text}
+              <br />
+              <span className="font-semibold text-[#24A1DE]">{t.urgent_highlight}</span>
             </p>
           </div>
         </div>
