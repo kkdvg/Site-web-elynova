@@ -26,7 +26,6 @@ export default function Navbar({ lang, toggleLang }: Props) {
     { name: t.mining, path: '/mining' },
     { name: t.roadmap, path: '/roadmap' },
     { name: t.transparency, path: '/transparency' },
-    { name: t.security, path: '/security' },
     { name: t.whitepaper, path: '/whitepaper' },
   ];
 

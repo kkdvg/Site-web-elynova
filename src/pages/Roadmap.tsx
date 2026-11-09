@@ -4,17 +4,19 @@ import { Rocket, TrendingUp, Wallet, BarChart3, Zap } from 'lucide-react';
 interface Props { lang: 'en' | 'fr'; }
 
 const PHASES_EN = [
-  { phase: 'Q1-Q2 2026', title: 'Foundation & Launch', status: 'completed', icon: Rocket, items: ['Community platform launch', 'Official ELY token generation on Solana', 'Bug bounty program launched'] },
-  { phase: 'Nov 20, 2026', title: 'Withdrawal Phase', status: 'in_progress', icon: Wallet, items: ['First withdrawal cycle to Solana wallets', 'KYC-free verification process', 'Wallet linkage verification'] },
-  { phase: 'Q1 2027', title: 'Market Listing', status: 'planned', icon: BarChart3, items: ['Official exchange listing (March 2027)', 'Liquidity pool initialization', 'Trading pairs activation'] },
-  { phase: '2027+', title: 'Ecosystem Growth', status: 'planned', icon: Zap, items: ['NFT marketplace launch', 'DeFi protocol integrations', 'ElyNova DAO governance activation'] },
+  { phase: 'September 2026', title: 'Development Phase', status: 'completed', icon: Rocket, items: ['Project conception & design', 'Telegram mini app development', 'Smart contract deployment on Solana'] },
+  { phase: 'Nov 8, 2026', title: 'Official Launch', status: 'completed', icon: TrendingUp, items: ['Website goes live publicly', 'Community platform opens to members', 'Mining bot becomes active on Telegram'] },
+  { phase: 'Nov 20, 2026', title: 'First Withdrawals', status: 'in_progress', icon: Wallet, items: ['First withdrawal cycle to Solana wallets begins', 'KYC-free wallet verification process', 'Wallet linkage validation for all users'] },
+  { phase: 'March 2027', title: 'CEX Listing', status: 'planned', icon: BarChart3, items: ['Official listing on centralized exchanges', 'Liquidity pool initialization', 'Trading pairs activation starts'] },
+  { phase: '2027+', title: 'Ecosystem Expansion', status: 'planned', icon: Zap, items: ['NFT marketplace launch', 'DeFi protocol integrations', 'ELI DAO governance activation'] },
 ];
 
 const PHASES_FR = [
-  { phase: 'T1-T2 2026', title: 'Fondation & Lancement', status: 'completed', icon: Rocket, items: ['Lancement de la plateforme communautaire', 'Génération officielle du token ELY sur Solana', 'Programme bug bounty lancé'] },
-  { phase: '20 Nov 2026', title: 'Phase de Retrait', status: 'in_progress', icon: Wallet, items: ['Premier cycle de retraits vers portefeuilles Solana', 'Processus de vérification sans KYC', 'Vérification du lien portefeuille'] },
-  { phase: 'T1 2027', title: 'Listing Marché', status: 'planned', icon: BarChart3, items: ['Listing officiel sur échange (Mars 2027)', 'Initialisation des pools de liquidité', 'Activation des paires de trading'] },
-  { phase: '2027+', title: 'Croissance Écosystème', status: 'planned', icon: Zap, items: ['Lancement marketplace NFT', 'Intégrations protocoles DeFi', 'Activation DAO ElyNova'] },
+  { phase: 'Septembre 2026', title: 'Phase de Développement', status: 'completed', icon: Rocket, items: ['Conception et design du projet', 'Développement de la mini-app Telegram', 'Déploiement des contrats intelligents sur Solana'] },
+  { phase: '8 Nov 2026', title: 'Lancement Officiel', status: 'completed', icon: TrendingUp, items: ['Mise en ligne publique du site', 'Ouverture de la plateforme communautaire', 'Activation du bot de minage sur Telegram'] },
+  { phase: '20 Nov 2026', title: 'Premiers Retraits', status: 'in_progress', icon: Wallet, items: ['Premier cycle de retraits vers portefeuilles Solana', 'Processus de vérification sans KYC', 'Validation du lien portefeuille pour tous les utilisateurs'] },
+  { phase: 'Mars 2027', title: 'Listing CEX', status: 'planned', icon: BarChart3, items: ['Listing officiel sur les échanges centralisés', 'Initialisation des pools de liquidité', 'Démarrage des paires de trading'] },
+  { phase: '2027+', title: 'Expansion Écosystème', status: 'planned', icon: Zap, items: ['Lancement marketplace NFT', 'Intégrations protocoles DeFi', 'Activation gouvernance DAO ELY'] },
 ];
 
 export default function RoadmapPage({ lang }: Props) {

@@ -12,7 +12,6 @@ import TokenomicsPage from './pages/Tokenomics';
 import MiningPage from './pages/Mining';
 import RoadmapPage from './pages/Roadmap';
 import TransparencyPage from './pages/Transparency';
-import SecurityPage from './pages/Security';
 import NewsPage from './pages/News';
 import FAQPage from './pages/Faq';
 import ContactPage from './pages/Contact';
@@ -46,7 +45,6 @@ export default function App() {
               <Route path="/mining" element={<MiningPage lang={lang} />} />
               <Route path="/roadmap" element={<RoadmapPage lang={lang} />} />
               <Route path="/transparency" element={<TransparencyPage lang={lang} />} />
-              <Route path="/security" element={<SecurityPage lang={lang} />} />
               <Route path="/news" element={<NewsPage lang={lang} />} />
               <Route path="/faq" element={<FAQPage lang={lang} />} />
               <Route path="/contact" element={<ContactPage lang={lang} />} />
