@@ -21,14 +21,14 @@ export default function Footer({ lang }: Props) {
           <p className="text-slate-400 max-w-sm mb-6 dark:text-slate-500">{t.tagline}</p>
           <div className="flex gap-3">
             <a href="https://t.me/elynova_official" target="_blank" rel="noreferrer"
-              className="w-10 h-10 bg-white/10 rounded-lg hover:bg-[#D12B9A] transition-colors flex items-center justify-center"
+              className="w-10 h-10 bg-white/10 rounded-lg hover:bg-[#24A1DE] transition-colors flex items-center justify-center"
               aria-label="Telegram">
-              <Send size={18} />
+              <Send size={18} className="text-[#24A1DE]" />
             </a>
             <a href="https://www.youtube.com/@Elynova_official" target="_blank" rel="noreferrer"
-              className="w-10 h-10 bg-white/10 rounded-lg hover:bg-[#D12B9A] transition-colors flex items-center justify-center"
+              className="w-10 h-10 bg-white/10 rounded-lg hover:bg-[#FF0000] transition-colors flex items-center justify-center"
               aria-label="YouTube">
-              <Youtube size={18} />
+              <Youtube size={18} className="text-[#FF0000]" />
             </a>
           </div>
         </div>

@@ -145,14 +145,14 @@ export default function ContactPage({ lang }: Props) {
             <div className="space-y-5">
               <a href={t.telegram_url} target="_blank" rel="noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 hover:bg-blue-500/10 hover:text-blue-600 transition-colors">
                 <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-sm">
-                  <Send className="w-5 h-5 text-[#1746D2]" />
+                  <Send className="w-5 h-5 text-[#24A1DE]" />
                 </div>
                 <span className="font-medium text-[#172033] text-sm">{t.telegram}</span>
               </a>
 
               <a href={t.youtube_url} target="_blank" rel="noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 hover:bg-red-500/10 hover:text-red-600 transition-colors">
                 <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-sm">
-                  <Youtube className="w-5 h-5 text-red-600" />
+                  <Youtube className="w-5 h-5 text-[#FF0000]" />
                 </div>
                 <span className="font-medium text-[#172033] text-sm">{t.youtube}</span>
               </a>
