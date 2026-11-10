@@ -4,18 +4,18 @@ import { Rocket, TrendingUp, Wallet, BarChart3, Zap } from 'lucide-react';
 interface Props { lang: 'en' | 'fr'; }
 
 const PHASES_EN = [
-  { phase: 'September 2026', title: 'Development Phase', status: 'completed', icon: Rocket, items: ['Project conception & design', 'Telegram mini app development', 'Smart contract deployment on Solana'] },
-  { phase: 'Nov 8, 2026', title: 'Official Launch', status: 'completed', icon: TrendingUp, items: ['Website goes live publicly', 'Community platform opens to members', 'Mining bot becomes active on Telegram'] },
-  { phase: 'Nov 20, 2026', title: 'First Withdrawals', status: 'in_progress', icon: Wallet, items: ['First withdrawal cycle to Solana wallets begins', 'KYC-free wallet verification process', 'Wallet linkage validation for all users'] },
-  { phase: 'March 2027', title: 'CEX Listing', status: 'planned', icon: BarChart3, items: ['Official listing on centralized exchanges', 'Liquidity pool initialization', 'Trading pairs activation starts'] },
+  { phase: 'January 2026', title: 'Development Phase', status: 'completed', icon: Rocket, items: ['Project conception & design', 'Telegram mini app development', 'Smart contract deployment on Solana'] },
+  { phase: 'October 2026', title: 'Official Launch', status: 'completed', icon: TrendingUp, items: ['Website goes live publicly', 'Community platform opens to members', 'Mining bot becomes active on Telegram'] },
+  { phase: 'November 2026', title: 'Active Withdrawals', status: 'in_progress', icon: Wallet, items: ['First withdrawal cycle begins this November 2026 to Solana wallets', 'KYC-free wallet verification process', 'Wallet linkage validation for all users'] },
+  { phase: 'March 2027', title: 'Exchange Listing', status: 'planned', icon: BarChart3, items: ['Official listing on exchange platforms', 'Liquidity pool initialization', 'Trading pairs activation starts'] },
   { phase: '2027+', title: 'Ecosystem Expansion', status: 'planned', icon: Zap, items: ['NFT marketplace launch', 'DeFi protocol integrations', 'ELI DAO governance activation'] },
 ];
 
 const PHASES_FR = [
-  { phase: 'Septembre 2026', title: 'Phase de Développement', status: 'completed', icon: Rocket, items: ['Conception et design du projet', 'Développement de la mini-app Telegram', 'Déploiement des contrats intelligents sur Solana'] },
-  { phase: '8 Nov 2026', title: 'Lancement Officiel', status: 'completed', icon: TrendingUp, items: ['Mise en ligne publique du site', 'Ouverture de la plateforme communautaire', 'Activation du bot de minage sur Telegram'] },
-  { phase: '20 Nov 2026', title: 'Premiers Retraits', status: 'in_progress', icon: Wallet, items: ['Premier cycle de retraits vers portefeuilles Solana', 'Processus de vérification sans KYC', 'Validation du lien portefeuille pour tous les utilisateurs'] },
-  { phase: 'Mars 2027', title: 'Listing CEX', status: 'planned', icon: BarChart3, items: ['Listing officiel sur les échanges centralisés', 'Initialisation des pools de liquidité', 'Démarrage des paires de trading'] },
+  { phase: 'Janvier 2026', title: 'Phase de Développement', status: 'completed', icon: Rocket, items: ['Conception et design du projet', 'Développement de la mini-app Telegram', 'Déploiement des contrats intelligents sur Solana'] },
+  { phase: 'Octobre 2026', title: 'Lancement Officiel', status: 'completed', icon: TrendingUp, items: ['Mise en ligne publique du site', 'Ouverture de la plateforme communautaire', 'Activation du bot de minage sur Telegram'] },
+  { phase: 'Novembre 2026', title: 'Retraits Actifs', status: 'in_progress', icon: Wallet, items: ['Premier cycle de retraits ce mois de novembre vers portefeuilles Solana', 'Processus de vérification sans KYC', 'Validation du lien portefeuille pour tous les utilisateurs'] },
+  { phase: 'Mars 2027', title: 'Listing sur Plateformes d\'Échange', status: 'planned', icon: BarChart3, items: ['Listing officiel sur les plateformes d\'échange', 'Initialisation des pools de liquidité', 'Démarrage des paires de trading'] },
   { phase: '2027+', title: 'Expansion Écosystème', status: 'planned', icon: Zap, items: ['Lancement marketplace NFT', 'Intégrations protocoles DeFi', 'Activation gouvernance DAO ELY'] },
 ];
 

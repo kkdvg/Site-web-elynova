@@ -10,13 +10,13 @@ const phases = {
     { phase: 'Q1 2026', title: 'Foundation & Launch', items: ['Community platform launch', 'Community (50K+ users)', 'Token generation event', 'Bug bounty program'] },
     { phase: 'Q2 2026', title: 'Growth & Community', items: ['Referral program', 'First airdrop', 'Partnerships', 'Staking features'] },
     { phase: 'Q3 2026', title: 'Expansion', items: ['Multi-chain deployment', 'Mobile wallet', 'DEX listing', 'Governance voting'] },
-    { phase: 'Q4 2026', title: 'Ecosystem', items: ['CEX listings', 'NFT marketplace', 'DeFi integrations', 'ElyNova DAO'] },
+    { phase: 'Q4 2026', title: 'Ecosystem', items: ['Exchange platform listings', 'NFT marketplace', 'DeFi integrations', 'ElyNova DAO'] },
   ],
   fr: [
     { phase: 'T1 2026', title: 'Fondation & Lancement', items: ['Lancement plateforme communautaire', 'Communauté (50K+ users)', 'Événement génération token', 'Programme bug bounty'] },
     { phase: 'T2 2026', title: 'Croissance', items: ['Programme de parrainage', 'Premier airdrop', 'Partenariats', 'Fonctionnalités staking'] },
     { phase: 'T3 2026', title: 'Expansion', items: ['Déploiement multi-chaîne', 'Wallet mobile', 'Listing DEX', 'Vote gouvernance'] },
-    { phase: 'T4 2026', title: 'Écosystème', items: ['Listings CEX', 'Marketplace NFT', 'Intégrations DeFi', 'DAO ElyNova'] },
+    { phase: 'T4 2026', title: 'Écosystème', items: ['Listings sur plateformes d\'échange', 'Marketplace NFT', 'Intégrations DeFi', 'DAO ElyNova'] },
   ],
 };
 

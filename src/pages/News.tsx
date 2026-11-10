@@ -3,13 +3,13 @@ import { Calendar, Tag } from 'lucide-react';
 interface Props { lang: 'en' | 'fr'; }
 
 const NEWS_EN = [
-  { date: '2026-11-08', category: 'Announcement', title: 'ElyNova Official Website Launched', excerpt: 'We are proud to announce the launch of our official website, providing comprehensive information about the ElyNova ecosystem, tokenomics, and roadmap.' },
-  { date: '2026-09-01', category: 'Development', title: 'Mining Platform Development', excerpt: 'Work continues on the ElyNova mining application with improved features and community feedback integration.' },
+  { date: '2026-10-15', category: 'Announcement', title: 'ElyNova Official Website Launched', excerpt: 'We are proud to announce the launch of our official website, providing comprehensive information about the ElyNova ecosystem, tokenomics, and roadmap.' },
+  { date: '2026-01-15', category: 'Development', title: 'Mining Platform Development', excerpt: 'Work continues on the ElyNova mining application with improved features and community feedback integration.' },
 ];
 
 const NEWS_FR = [
-  { date: '2026-11-08', category: 'Annonce', title: 'Lancement du Site Web Officiel ElyNova', excerpt: 'Nous sommes fiers d\'annoncer le lancement de notre site web officiel, offrant des informations complètes sur l\'écosystème ElyNova, la tokenomics et la feuille de route.' },
-  { date: '2026-09-01', category: 'Développement', title: 'Développement de la Plateforme de Minage', excerpt: 'Les travaux se poursuivent sur l\'application de minage ElyNova avec des fonctionnalités améliorées et l\'intégration des retours communautaires.' },
+  { date: '2026-10-15', category: 'Annonce', title: 'Lancement du Site Web Officiel ElyNova', excerpt: 'Nous sommes fiers d\'annoncer le lancement de notre site web officiel, offrant des informations complètes sur l\'écosystème ElyNova, la tokenomics et la feuille de route.' },
+  { date: '2026-01-15', category: 'Développement', title: 'Développement de la Plateforme de Minage', excerpt: 'Les travaux se poursuivent sur l\'application de minage ElyNova avec des fonctionnalités améliorées et l\'intégration des retours communautaires.' },
 ];
 
 export default function NewsPage({ lang }: Props) {

@@ -174,8 +174,8 @@ export default function WhitepaperPage({ lang }: Props) {
                   color: '#1746D2',
                   title_en: 'Withdraw to Your Own Wallet',
                   title_fr: 'Retirer vers Votre Portefeuille',
-                  desc_en: 'From November 20, 2026, ELY can be withdrawn directly to your personal Solana wallet. Full control of your tokens.',
-                  desc_fr: 'À partir du 20 novembre 2026, l\'ELY peut être retirée directement vers votre portefeuille Solana personnel. Plein contrôle de vos tokens.',
+                  desc_en: 'First withdrawals begin this November 2026, ELY can be withdrawn directly to your personal Solana wallet. Full control of your tokens.',
+                  desc_fr: 'Dès ce mois de novembre 2026, l\'ELY peut être retirée directement vers votre portefeuille Solana personnel. Plein contrôle de vos tokens.',
                 },
                 {
                   icon: Landmark,
@@ -325,10 +325,10 @@ export default function WhitepaperPage({ lang }: Props) {
             </h2>
             <div className="space-y-3">
               {[
-                { status: 'completed', date: 'Sept 2026', title_en: 'Development Phase', title_fr: 'Phase de Développement', desc_en: 'Project conception, Telegram mini app built, smart contracts deployed on Solana.', desc_fr: 'Conception du projet, mini-app Telegram développée, contrats intelligents déployés sur Solana.' },
-                { status: 'completed', date: 'Nov 8, 2026', title_en: 'Official Launch', title_fr: 'Lancement Officiel', desc_en: 'Website goes live. Community platform opens. Mining bot becomes active.', desc_fr: 'Site web mis en ligne. Plateforme communautaire ouverte. Bot de minage actif.' },
-                { status: 'in_progress', date: 'Nov 20, 2026', title_en: 'First Withdrawals Live', title_fr: 'Premiers Retraits Actifs', desc_en: 'Users can withdraw mined ELY to their Solana wallets. Verification process complete.', desc_fr: 'Les utilisateurs peuvent retirer leur ELY miné vers leurs portefeuilles Solana. Vérification terminée.' },
-                { status: 'planned', date: 'Mars 2027', title_en: 'CEX Exchange Listing', title_fr: 'Listing sur les Échanges', desc_en: 'ELI listed on major exchanges. Users can trade and cash out. Liquidity pools activated.', desc_fr: 'ELY listée sur les principaux échanges. Les utilisateurs peuvent trader et retirer. Pools de liquidité activés.' },
+                { status: 'completed', date: 'Jan 2026', title_en: 'Development Phase', title_fr: 'Phase de Développement', desc_en: 'Project conception, Telegram mini app built, smart contracts deployed on Solana.', desc_fr: 'Conception du projet, mini-app Telegram développée, contrats intelligents déployés sur Solana.' },
+                { status: 'completed', date: 'Oct 2026', title_en: 'Official Launch', title_fr: 'Lancement Officiel', desc_en: 'Website goes live. Community platform opens. Mining bot becomes active.', desc_fr: 'Site web mis en ligne. Plateforme communautaire ouverte. Bot de minage actif.' },
+                { status: 'in_progress', date: 'Nov 2026', title_en: 'Active Withdrawals', title_fr: 'Retraits Actifs', desc_en: 'First withdrawal cycle: this November 2026 to Solana wallets. Verification process complete.', desc_fr: 'Premier retrait : ce mois de novembre 2026 vers portefeuilles Solana. Vérification terminée.' },
+                { status: 'planned', date: 'Mars 2027', title_en: 'Exchange Platform Listing', title_fr: 'Listing sur Plateforme d\'Échange', desc_en: 'ELY listed on exchange platforms. Users can trade and swap. Liquidity pools activated.', desc_fr: 'ELY listée sur les plateformes d\'échange. Les utilisateurs peuvent trader et échanger. Pools de liquidité activés.' },
                 { status: 'planned', date: '2027+', title_en: 'Ecosystem Expansion', title_fr: 'Expansion de l\'Écosystème', desc_en: 'NFT marketplace launch. DeFi integrations. DAO governance powered by ELY votes.', desc_fr: 'Lancement marketplace NFT. Intégrations DeFi. Gouvernance DAO pilotée par les votes ELY.' },
               ].map((m, i) => (
                 <div key={i} className="flex items-start gap-4 card-white p-5 hover:border-[#1746D2]/30 transition-all">
